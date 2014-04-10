@@ -1,0 +1,549 @@
+// Varios
+.btnSmall {
+	background: @yellow;
+	color: @black;
+	font-family: 'HelveticaNeueBold';
+	font-size: 11px;
+	.border-radius(3px);
+	.transition(.5s);
+	&:hover {
+		color: @white;
+		background: @green;
+	}
+}
+.btnBackToSite {
+	float: right;
+	margin: 15px 10px 15px 0;
+	padding: 15px 30px;
+}
+.btnCancel {
+	background: @red;
+	&:hover {
+		background: lighten(@black, 72%);
+		color: @white;
+	}
+}
+.btnGuardar {
+	margin: 10px 0;
+}
+.btnCheckout {
+	padding: 15px 48px !important;
+}
+.btnTopNav {
+	padding: 15px 35px !important;
+}
+.fieldsetDiv {
+	label {
+		color: lighten(@black, 71%);
+		margin-left: 2px;
+		.inline-block(88px);
+	}
+	input[type="text"], input[type="password"]{
+		margin-left: 4px;
+		text-align: center;
+		width: 22px !important;
+	}
+	span.errorInputError {
+		display: block;
+	}
+}
+span.errorInputError {
+	border: none !important;
+	color: @red;
+}
+.checkbox-wrapper {
+	text-align: left;
+	input {
+		position: absolute;
+		visibility: hidden;
+	}
+	label {
+		margin-left: 5px;
+		.inline-block;
+	}
+	.checkbox-span {
+		cursor: default;
+		.size-icon (@iconBackground, 20px, 20px, 0 -120px);
+		&:active {
+			background-position: 0 -140px;
+		}
+		&.checkbox-checked {
+			background-position: 0 -160px;
+			&:active {
+				background-position: 0 -180px;
+			}
+		}
+	}
+}
+.radio-wrapper {
+	border: none !important;
+	.inline-block;
+	input {
+		visibility: hidden;
+		position: absolute;
+	}
+	.radio-span {
+		cursor: default;
+		.size-icon (@iconBackground, 15px, 15px, -120px -110px);
+		&:active {
+			background-position: -120px -125px;
+		}
+		&.radio-selected {
+			background-position: -120px -140px;
+			&:active {
+				background-position: -120px -155px;
+			}
+		}
+	}
+	.radio-color {
+		background: none;
+		border: 1px solid @white;
+		cursor: pointer;
+		overflow: hidden;
+		padding: 0;
+		.size(17px, 17px);
+		& {
+			margin-right: 0;
+		}
+		&.radio-selected {
+			border: 1px solid @black;
+		}
+	}
+	.radio-soldout {
+		background: @white @noLine no-repeat center center !important;
+		border: @inputBorder;
+		cursor: default !important;
+		font-size: 11px;
+		height: 11px;
+		line-height: normal;
+		margin-right: 2px;
+		min-width: 20px;
+		padding: 4px 1px;
+		text-align: center;
+		text-indent: 0;
+		width: 16px;
+		width: auto !important;
+		&:hover {
+			border: @inputBorder !important;
+		}
+	}
+}
+.miCuenta-tab {
+	.radio-span {
+		.size-icon (@iconBackground, 20px, 20px, 0 -120px);
+		&:active {
+			background-position: 0 -140px;
+		}
+		&.radio-selected {
+			background-position: 0 -160px;
+			&:active {
+				background-position: 0 -180px;
+			}
+		}
+	}
+}
+.divGender {
+	.radio-span {
+		background: @white;
+		border: @inputBorder;
+		color: @placeholderText;
+		cursor: pointer;
+		line-height: normal;
+		padding: 2px 5px;
+		text-align: center;
+		text-indent: 0;
+		.inline-block(22px);
+		&:hover{
+			border-color: @grey;
+		}
+	}
+	.radio-selected {
+		background: @grey;
+		color: @white;
+		&:hover{
+			border: @inputBorder;
+		}
+	}
+}
+.errorInputError {
+	border: 1px solid @red !important;
+}
+.errorDiv {
+	.errorInputError {
+		display: block;
+		color: @red;
+		border: none !important;
+		margin: 5px;
+	}
+	.errorInputOK {
+		display: none !important;
+	}
+}
+span.errorInputOK {
+	position: absolute;
+}
+.closeButton {
+	position: relative;
+	top: 10px;
+	left: -10px;
+	.iconButton;
+}
+.highslide-wrapper, .highslide-outline {
+   background: none !important;
+   
+}
+.highslide-html {
+	background: none !important;
+	overflow: hidden;
+	.margin-padding;
+	iframe {
+		overflow: hidden;
+		.margin-padding;
+		html {
+			overflow: hidden;
+			.margin-padding;
+		}
+	}
+}
+.highslide-wrapper, .highslide-html, .highslide-html-content, .highslide-body {
+	overflow: hidden !important;
+}
+.highslide-wrapper .highslide-html-content {
+    width: auto;
+}
+.link {
+	color: @black;
+	cursor: pointer;
+	text-decoration: underline;
+	&:hover {
+		color: lighten(@black, 72%);
+	}
+}
+.login .passwordHide {
+	margin-left: 5px !important;
+}
+.select-div {
+	position: relative;
+	.inline-block;
+	.margin-padding;
+	&.selectQuantity {
+		.select-div {
+			position: relative;
+			margin: 0 0 0 10px;
+		}
+		.select-input {
+			font-size: 11px;
+			margin: 0;
+			padding: 1px 10px 1px 1px;
+			text-align: center;
+			width: 20px !important;
+		}
+		.select-trigger, .iconFont-downmenu {
+			right: 3px;
+			top: 5px;
+		}
+		.select-ul {
+			//position: fixed;
+			width: 25px !important;
+			li {
+				display: block;
+				border: none;
+				padding: 2px;
+				text-align: center;
+			}
+		}
+	}
+	input.select-input {
+		color: @inputTextColor; 
+	}
+	.select-trigger {
+		.user-select(none);
+		position: absolute;
+		right: 7px;
+		top: 9px;
+	}
+	.iconFont-downmenu {
+		font-size: 10px !important;
+		.user-select(none);
+		position: absolute;
+		right: 7px;
+		top: 9px;
+	}
+	.select-ul {
+		background: @white;
+		border: @inputBorder;
+		display: none;
+		margin: -3px 0 0 0 !important;
+		position: absolute;
+		width: 169px;
+		z-index: 2;
+		.box-shadow(0 3px 5px rgba(0,0,0,0.5));
+		.margin-padding;
+		li {
+			color: @placeholderText;
+			background: @white;
+			cursor: pointer;
+			display: block;
+			.margin-padding;
+			padding: 5px !important;
+			&:hover{
+				background: lighten(@black, 30%);
+				color: @white;
+			}
+		}
+	}
+	.select-hidden {
+		position: absolute;
+		visibility: hidden;
+	}
+	.select-input {
+		background: @inputBackground;
+		border: @inputBorder;
+		color: @placeholderText;
+		padding: 3px 32px 3px 5px;
+		.font('HelveticaNeueRoman');
+		.border-radius(@inputBorderRadius);
+		.box-shadow(@inputBoxShadow);
+		.inline-block(132px) !important;
+		&:hover {
+			border-color: @grey;
+		}
+	}
+	.select-active {
+		color: @inputTextColor;
+	}
+}
+.shippingNewAddress, .creditcardNew {
+	.select-input {
+		margin: 2px 0;
+		padding: 7px 32px 7px 15px !important;
+	}
+	.select-ul {
+		margin-top: -1px !important;
+		width: 179px;
+	}
+}
+.slider-wrapper {
+	height: 20px;
+	padding: 10px 0;
+	position: relative;
+	text-align: center;
+	width: 127px;
+	span {
+		font-size: 11px;
+		position: absolute;
+	}
+	.slider-textValue {
+		top: 23px;
+	}
+	.slider-minValue {
+		left: 0;
+	}
+	.slider-maxValue {
+		right: -5px;
+	}
+	.slider-holder {
+		border: none;
+		.size-icon (@iconBackground, 7px, 124px, -260px -157px);
+		overflow: initial;
+		.ui-slider-handle {
+			background: none;
+			border: none;
+			line-height: normal;
+			margin-left: -5px;
+			text-indent: 0;
+			top: 15px;
+			.transition(none);
+			&:focus {
+				outline: none;
+			}
+			.slider-bit {
+				.size-icon (@iconBackground, 12px, 12px, -103px -124px);
+				cursor: pointer;
+				position: absolute;
+				top: -19px;
+			}
+			.iconBit {
+				position: absolute;
+				top: -19px;
+			}
+			.slider-amount {
+				color: @grey;
+				margin: -32px 0 0 -5px;
+				em {
+					font-style: normal;
+				}
+			}
+		}
+		.ui-widget-header {
+			background: none;
+			border: none;
+		}
+	}
+}
+.scrollPanel:focus {
+	outline: none;
+}
+.submitButton {
+	text-align: center;
+}
+.tooltip {
+	background: @tooltipBackgroundIE;
+	background: @tooltipBackground;
+	color: @tooltipColor;
+	font-size: @tooltipFontSize;
+	line-height: @tooltipLineHeight;
+	padding: @tooltipPadding;
+	position: absolute;
+	z-index: 999;
+	.border-radius(@tooltipBorderRadius);
+}
+.ui-datepicker-trigger {
+	cursor:	pointer;
+}
+.elipse {
+	word-wrap: normal;
+	.text-overflow;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000000;
+}
+.modal-backdrop.fade {
+  opacity: 0;
+}
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+.modal {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  z-index: 1050;
+  width: 560px;
+  margin-left: -280px;
+  background-color: #ffffff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  *border: 1px solid #999;
+  /* IE6-7 */
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  outline: none;
+}
+.modal.fade {
+  -webkit-transition: opacity .3s linear, top .3s ease-out;
+  -moz-transition: opacity .3s linear, top .3s ease-out;
+  -o-transition: opacity .3s linear, top .3s ease-out;
+  transition: opacity .3s linear, top .3s ease-out;
+  top: -25%;
+}
+.modal.fade.in {
+  top: 10%;
+}
+.modal-header {
+  padding: 9px 15px;
+  border-bottom: 1px solid #eee;
+}
+.modal-header .close {
+  margin-top: 2px;
+}
+.modal-header h3 {
+  margin: 0;
+  line-height: 30px;
+}
+.modal-body {
+  position: relative;
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 15px;
+}
+.modal-form {
+  margin-bottom: 0;
+}
+.modal-footer {
+  padding: 14px 15px 15px;
+  margin-bottom: 0;
+  text-align: right;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: inset 0 1px 0 #ffffff;
+  -moz-box-shadow: inset 0 1px 0 #ffffff;
+  box-shadow: inset 0 1px 0 #ffffff;
+  *zoom: 1;
+}
+.modal-footer:before,
+.modal-footer:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.modal-footer:after {
+  clear: both;
+}
+.modal-footer .btn + .btn {
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+
+.thanks-div {
+	background: @black;
+	background: rgba(0,0,0,0.8);
+	color: @white;
+	display: none;
+	font-size: 14px;
+	height: 100%;
+	position: absolute;
+	padding: 0;
+	top: 0;
+	text-align: center;
+	width: 100%;
+	margin: 0 0 0 -10px;
+	z-index: 3;
+	.loader {
+		background: @black @fancyboxPreloader;
+		border: 10px solid @black;
+		margin: 10px auto;
+		.border-radius(10px);
+		.size(24px, 24px);
+	}
+	.data {
+		.center-position(100px, 100px);
+	}
+	p {
+		margin: 10px 0 !important;
+	}
+	.btn {
+		background: @red !important;
+		border: none !important;
+		color: @white !important;
+		font-size: 12px;
+		padding: 7px 20px !important;
+		.inputButton;
+	}
+}
+	
