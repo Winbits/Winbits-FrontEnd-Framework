@@ -32,19 +32,29 @@
 		},
 		addInputSelect = function(obj){
 			styledSelect = $(obj).siblings('.'+ defaults.inputSelect);
-			var valor = $(obj).children('option').eq(0).text();
-			$(obj).children('option').each(function(){
-				if ($(this).attr('selected') === 'selected'){
+			var valor = $(obj).children('option').eq(0).text(),
+				classOption = '', inputValue;
+			$(obj).children('option').each(function(i){
+				if ($(this).attr('selected')){
 					valor = $(this).text();
+					if(i !== 0) {
+						classOption = defaults.selectActive;
+						inputValue = true;
+					}
 				}
 			});
-			if($(obj).data('inputselect')) {
-				styledSelect.attr('placeholder',valor)
-				.addClass($(obj).children('option').eq(0).data('icon'));
-			} else {
-				styledSelect.text(valor)
-				.addClass($(obj).children('option').eq(0).data('icon'));
+			if($(obj).children('option').eq(0).data('icon')) {
+				classOption = classOption + ' ' + $(obj).children('option').eq(0).data('icon');
 			}
+			if($(obj).data('inputselect')) {
+				styledSelect.attr('placeholder',valor);
+				if(inputValue){
+					styledSelect.val(valor);
+				}
+			} else {
+				styledSelect.text(valor);
+			}
+			styledSelect.addClass(classOption);
 			addLista(obj);
 		},
 		addLista = function(obj){
@@ -52,10 +62,11 @@
 					'class': defaults.ulOptions
 				}).insertAfter($(obj).parent().find('span.'+ defaults.claseTrigger));
 			for (var i = 0; i < numberOfOptions; i++) {
+				var $opLi = $(obj).children('option').eq(i);
 				$('<li />', {
-					text: $(obj).children('option').eq(i).text(),
-					rel: $(obj).children('option').eq(i).val(),
-					'data-class': $(obj).children('option').eq(i).data('icon')
+					text: $opLi.text(),
+					rel: $opLi.val(),
+					'data-icon': $opLi.data('icon')
 				}).appendTo(list);
 			}
 			listItems = list.children('li');
@@ -67,16 +78,15 @@
 		clickingTrigger = function(obj){
 			$(obj).parent().on('click', 'span.'+ defaults.claseTrigger, function(e){
 				e.stopPropagation();
+				$('.'+defaults.ulOptions).hide();
 				$(obj).siblings('.'+ defaults.inputSelect).toggleClass(defaults.claseActivo);
 				$(this).next('ul.'+ defaults.ulOptions).toggle();
 			});
 			clickingOption(obj);
 		},
 		clickingDocument = function(obj){
-			$(document).click(function () {
-				$(obj).siblings('.'+ defaults.inputSelect).removeClass(defaults.claseActivo);
-				$(obj).siblings('ul').hide();
-			});
+			$(obj).siblings('.'+ defaults.inputSelect).removeClass(defaults.claseActivo);
+			$('.'+defaults.ulOptions).hide();
 		},
 		clickingOption = function(obj){
 			$(obj).change().parent().on('click', 'ul li', function(e){
@@ -85,20 +95,23 @@
 				styledSelect = $(obj).siblings('.'+ defaults.inputSelect);
 				var $this = $(this);
 				if($(obj).data('inputselect')) {
-					styledSelect.val($this.text()).removeClass(defaults.claseActivo)
-					.addClass(defaults.selectActive +' '+ $this.data('clase'));
+					styledSelect.val($this.text());
 				} else {
-					styledSelect.text($this.text()).removeClass(defaults.claseActivo)
-					.addClass(defaults.selectActive +' '+ $this.data('clase'));
+					styledSelect.text($this.text());
 				}
+				styledSelect.removeClass(defaults.claseActivo)
+				.addClass(defaults.selectActive);
 				$(obj).val($this.attr('rel'));
 				for(var o=0, opts = $(obj).children('option'); o < opts.length; o++){
 					if(opts.eq(o).val() === $this.attr('rel')) {
 						opts.eq(o).attr('selected', 'selected');
+						if(o === 0){
+							styledSelect.val('');
+							styledSelect.removeClass(defaults.selectActive);
+						}
 					}
 				}
 				$(obj).siblings('ul').hide();
-				clickingDocument(obj);
 				$(obj).trigger('change');
 			});
 			$(obj).on('change', function(e){
@@ -106,6 +119,9 @@
 				if(defaults.onChangeSelect){
 					changeSelect(obj);
 				}
+			});
+			$(document).click(function(){
+				clickingDocument(obj);
 			});
 		},
 		resetSelected = function(obj){

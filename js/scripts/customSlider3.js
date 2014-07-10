@@ -11,13 +11,14 @@
 			amount: 'slider-amount',
 			textValue: 'slider-textValue',
 			textMin: 'slider-minValue',
-			textMax: 'slider-maxValue'
+			textMax: 'slider-maxValue',
+			sliderBG: 'iconFont-slideBG'
 		}, options),
 		price, priceItem, datamax, realpriceItem, realprice, percent, percentItem, totalprice, totalpriceItem,
 		wrappingInput = function(obj){
 			asignaValues(obj);
-			$(obj).wrap('<div class="'+ defaults.wrapper +'"><div class="'+ defaults.holder +'"/>');
-			$(obj).parent().append('<a href="#" class="'+ defaults.handle +'"><div class="'+ defaults.bit +'"><span class="iconBG"/><span class="iconFont-bit"/></div><span class="'+ defaults.amount +'">$<em>'+$(obj).val()+'</em></span></a>');
+			$(obj).wrap('<div class="'+ defaults.wrapper +'"><div class="'+ defaults.holder+'"/>');
+			$(obj).parent().append('<div class="'+ defaults.sliderBG +'"></div><a href="#" class="'+ defaults.handle +'"><div class="'+ defaults.bit +'"><span class="iconBG"/><span class="iconFont-bit"/></div><span class="'+ defaults.amount +'">$<em>'+$(obj).val()+'</em></span></a>');
 			$(obj).parent().parent().append('<span class="'+ defaults.textValue +' '+ defaults.textMin +'">'+$(obj).data('min')+'</span><span class="'+ defaults.textValue +' '+ defaults.textMax +'">'+datamax+'</span>');
 			initSlider(obj);
 		},

@@ -19,7 +19,15 @@
 					$(this).wrap('<div class="'+ defaults.wrapper +'"/>');
 				}
 				$(this).parent().prepend('<span class="'+ defaults.spanIcon +' '+ clase +'"/>');
-				clickingCheckbox(this);
+				$(this).appendTo($(this).next());
+				var $this = this;
+				$(this).parent().parent().find('.'+ defaults.spanIcon).click(function(){
+					clickingCheckbox($this, this);
+				});
+				$(this).parent().click(function(e){
+					e.preventDefault();
+					$(this).parent().find('.'+ defaults.spanIcon).trigger('click');
+				});
 			});
 		},
 		checkingChecked = function(obj){
@@ -29,18 +37,16 @@
 				clase = defaults.unSelectClass;
 			}
 		},
-		clickingCheckbox = function(obj){
-			$(obj).parent().find('.'+ defaults.spanIcon).click(function(){
-				if($(obj).prop('checked')){
-					$(this).removeClass(defaults.selectClass);
-					$(this).addClass(defaults.unSelectClass);
-					$(obj).attr('checked', false);
-				} else {
-					$(this).removeClass(defaults.unSelectClass);
-					$(this).addClass(defaults.selectClass);
-					$(obj).attr('checked', true);
-				}
-			});
+		clickingCheckbox = function(obj, trigger){
+			if($(obj).prop('checked')){
+				$(trigger).removeClass(defaults.selectClass);
+				$(trigger).addClass(defaults.unSelectClass);
+				$(obj).prop('checked', false);
+			} else {
+				$(trigger).removeClass(defaults.unSelectClass);
+				$(trigger).addClass(defaults.selectClass);
+				$(obj).prop('checked', true);
+			}
 		};
 		return this.each(function(){
 			wrappingInput(this);

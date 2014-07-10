@@ -10,7 +10,8 @@
 			radio: 'input[type="radio"]',
 			classColor: 'radio-color',
 			tooltipClass: 'tool-tip',
-			classSoldout: 'radio-soldout'
+			classSoldout: 'radio-soldout',
+			justClick: false
 		}, options),
 		wrappingInput = function(obj){
 			$(obj).find(defaults.radio).each(function(){
@@ -31,13 +32,17 @@
 				if($this.data('soldout')){
 					soldOut(this);
 				}
+				$this.appendTo($this.next());
 			});
 			clickingRadio(obj);
+			$(obj).find('label').click(function(){
+				$(this).parent().find('.' + defaults.spanRadio).trigger('click');
+			});
 		},
 		unchecRadio = function(obj){
 			$(obj).find(defaults.radio).each(function(){
-				$(this).attr('checked', false);
-				$(this).parent().find('.'+defaults.spanRadio).removeClass(defaults.spanSelected);
+				$(this).prop('checked', false);
+				$(this).parent().parent().find('.'+defaults.spanRadio).removeClass(defaults.spanSelected);
 			});
 		},
 		clickingRadio = function(obj){
@@ -45,7 +50,7 @@
 				var $input = $(this).parent().find(defaults.radio);
 				unchecRadio(obj);
 				if(!($input.prop('checked'))){
-					$input.attr('checked', true);
+					$input.prop('checked', true);
 					if($input.length) {
 						$(this).addClass(defaults.spanSelected);
 					}
@@ -61,6 +66,13 @@
 			$(obj).remove();
 		};
 		return this.each(function(){
-			wrappingInput(this);
+			if(!defaults.justClick) {
+				wrappingInput(this);
+			} else {
+				clickingRadio(this);
+				$(this).find('label').click(function(){
+					$(this).parent().find('.' + defaults.spanRadio).trigger('click');
+				});
+			}
 		});
 	};

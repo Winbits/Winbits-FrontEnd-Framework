@@ -2,18 +2,18 @@
 //      FANCYBOX: Modales con FancyBox
 // ++++++++++++++++++++++++++++++++++++++
 	
-	jQuery.fn.fancyBox = function(){
-		var optionsFancybox = {},
+	jQuery.fn.fancyBox = function(options){
+		var defaults = $.extend({
+			afterShow: false
+		}, options),
+		optionsFancybox = {},
 		defaultFancybox = function(obj){
 			optionsFancybox = {
 				padding: 0,
 				margin: 0,
 				width: $(obj).data('fancyboxwidth'),
-				iframe: {
-					scrolling: 'auto',
-					preload: true
-				},
-				type: 'iframe'
+				type: 'ajax',
+				afterShow: defaults.afterShow
 			};
 		},
 		hrefFancybox = function(obj) {
@@ -26,7 +26,8 @@
 					scrolling: 'auto',
 					preload: true
 				},
-				type: 'iframe'
+				type: 'iframe',
+				afterShow: defaults.afterShow
 			};
 		},
 		noCloseFancybox = function(obj){

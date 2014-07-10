@@ -69,16 +69,17 @@
 				max: +datamax,
 				slide: function(event, ui){
 					$(obj).val(ui.value);
-					$(obj).parent().find('.'+ defaults.amount +' em').text(+ui.value);
-					if($(obj).data('moveprice')) {
-						totalpriceItem.text(putCommas(totalprice - ui.value));
-					}
-					if($(obj).data('percent') && $(obj).data('realprice')){
-						percent = 100 - parseInt((100 * (price - ui.value)) / realprice, 10);
-						percentItem.text(percent);
-					}
-					if($(obj).data('save')){
-						$('.'+$(obj).data('saveitem')).text(putCommas($(obj).data('save')+ui.value));
+					var maxSelection, previousValue, value, $this=$(obj);
+					maxSelection = parseInt($this.data('max-selection') || '0');
+					value = Math.min(maxSelection, ui.value);
+					previousValue = $this.val();
+					$this.val(value);
+					$this.parent().find(".slider-amount em").text(value);
+					if (ui.value > maxSelection) {
+						if (previousValue !== maxSelection) {
+							$(this).slider('value', maxSelection);
+						}
+						return false;
 					}
 				},
 				step: $(obj).data('step')

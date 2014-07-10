@@ -22,8 +22,14 @@
 		initSwiper = function(obj){
 			var swiper = new Swiper (obj, defaults.optionsSwiper);
 			if(!(defaults.loop)){
-				swiper.addCallback('TouchEnd', function(swiper){
-					removeArrows(obj, swiper, 1);
+				swiper.addCallback('TouchEnd', function(){
+					$(obj).removeArrows({
+						addCallback: 1,
+						arrowLeft: defaults.arrowLeft,
+						arrowRight: defaults.arrowRight,
+						slidesNum: defaults.slidesNum,
+						slideCSS: defaults.slideCSS
+					});
 				});
 			}if(defaults.initialSlide){
 				initialSlide(obj, swiper);
@@ -51,7 +57,12 @@
 				$(this).siblings(defaults.arrowRight).slideDown();
 				swiper.swipePrev();
 				if(!(defaults.loop)){
-					removeArrows(obj, swiper);
+					$(obj).removeArrows({
+						arrowLeft: defaults.arrowLeft,
+						arrowRight: defaults.arrowRight,
+						slidesNum: defaults.slidesNum,
+						slideCSS: defaults.slideCSS
+					});
 				}
 			});
 			$(obj).siblings(defaults.arrowRight).on('click', function(e) {
@@ -59,7 +70,12 @@
 				$(this).siblings(defaults.arrowLeft).slideDown();
 				swiper.swipeNext();
 				if(!(defaults.loop)){
-					removeArrows(obj, swiper);
+					$(obj).removeArrows({
+						arrowLeft: defaults.arrowLeft,
+						arrowRight: defaults.arrowRight,
+						slidesNum: defaults.slidesNum,
+						slideCSS: defaults.slideCSS
+					});
 				}
 			});
 		},
@@ -71,7 +87,12 @@
 				}
 			});
 			swiper.swipeTo(index);
-			removeArrows(obj, swiper);
+			$(obj).removeArrows({
+				arrowLeft: defaults.arrowLeft,
+				arrowRight: defaults.arrowRight,
+				slidesNum: defaults.slidesNum,
+				slideCSS: defaults.slideCSS
+			});
 		},
 		calculateHeight = function(obj, swiper){
 			var altura = $(swiper.activeSlide()).outerHeight();
@@ -93,32 +114,49 @@
 				$(obj).siblings(defaults.arrowLeft).hide();
 				$(obj).siblings(defaults.arrowRight).hide();
 			}
-		},
-		removeArrows = function(obj, swiper, plus){
-			var active = 0,
-				pointOfNoReturn = size - (defaults.slidesNum - 1),
-				left = $(obj).siblings(defaults.arrowLeft),
-				right = $(obj).siblings(defaults.arrowRight);
-			active =+ plus;
-			$(obj).find(defaults.slideCSS).each(function(i){
-				if($(this).hasClass('swiper-slide-active')){
-					active = i+1;
-				}
-			});
-			if(active <= 1){
-				left.slideUp();
-				right.slideDown();
-			} else if(active >= pointOfNoReturn){
-				left.slideDown();
-				right.slideUp();
-			} else {
-				left.slideDown();
-				right.slideDown();
-			}
 		};
 		return this.each(function(index){
 			var obj = 'swiperCarrusel-'+index;
 			$(this).addClass(obj);
 			calculateSize(this);
+		});
+	};
+
+	jQuery.fn.removeArrows = function(options){
+		var defaults = $.extend({
+			slideCSS: '.carrusel-slide',
+			slidesNum: 0,
+			arrowLeft: '.arrowLeft',
+			arrowRight: '.arrowRight',
+			slideActive: 'swiper-slide-active',
+			addCallback: 0
+		}, options);
+		return this.each(function(){
+			var active = 0,
+				size = $(this).find(defaults.slideCSS).size(),
+				pointOfNoReturn = size - (defaults.slidesNum - 1),
+				left = $(this).siblings(defaults.arrowLeft),
+				right = $(this).siblings(defaults.arrowRight);
+			if(size > defaults.slidesNum){
+				active =+ defaults.addCallback;
+				$(this).find(defaults.slideCSS).each(function(i){
+					if($(this).hasClass(defaults.slideActive)){
+						active = i+1;
+					}
+				});
+				if(active <= 1){
+					left.slideUp();
+					right.slideDown();
+				} else if(active >= pointOfNoReturn){
+					left.slideDown();
+					right.slideUp();
+				} else {
+					left.slideDown();
+					right.slideDown();
+				}
+			} else {
+				left.hide();
+				right.hide();
+			}
 		});
 	};

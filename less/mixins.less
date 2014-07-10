@@ -717,3 +717,31 @@
     background-position: @btnHoverBackgroundPosition;
   }
 }
+
+// OBJETOS
+// ------------------------------------------------------
+.arrow(@bottom, @left, @right, @top) {
+  .inline-block;
+  border-bottom: @bottom solid transparent;
+  border-left: @left solid transparent;
+  border-right: @right solid transparent;
+  border-top: @top solid transparent;
+  height: 0;
+  width: 0;
+}
+.arrowBottom(@color, @bottom, @left, @right, @top) {
+  .arrow(@bottom, @left, @right, @top);
+  border-top-color: @color;
+}
+.arrowLeft(@color, @bottom, @left, @right, @top) {
+  .arrow(@bottom, @left, @right, @top);
+  border-right-color: @color;
+}
+.arrowRight(@color, @bottom, @left, @right, @top) {
+  .arrow(@bottom, @left, @right, @top);
+  border-left-color: @color;
+}
+.arrowTop(@color, @bottom, @left, @right, @top) {
+  .arrow(@bottom, @left, @right, @top);
+  border-bottom-color: @color;
+}

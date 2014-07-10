@@ -3,9 +3,9 @@
 // ++++++++++++++++++++++++++++++++++++
 	
 	jQuery.fn.toolTip = function(options){
-		var defaults = {
+		var defaults = $.extend({
 			clase: 'tooltip'
-		},
+		}, options),
 		asignaValor = function(obj){
 			var $this = $(obj), valor;
 			if ($this.text() !== '') {
@@ -45,9 +45,6 @@
 			$(obj).attr('title', valor);
 		};
 		return this.each(function(){
-			if(options){
-				defaults = $.extend(defaults, options);
-			}
 			var val = asignaValor(this);
 			if (val !== ''){
 				$(this).on({

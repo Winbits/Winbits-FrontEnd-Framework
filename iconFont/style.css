@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'clickOnero';
-	src:url('fonts/clickOnero.eot?-mox7iy');
-	src:url('fonts/clickOnero.eot?#iefix-mox7iy') format('embedded-opentype'),
-		url('fonts/clickOnero.woff?-mox7iy') format('woff'),
-		url('fonts/clickOnero.ttf?-mox7iy') format('truetype'),
-		url('fonts/clickOnero.svg?-mox7iy#clickOnero') format('svg');
+	src:url('fonts/clickOnero.eot?-ic4nrt');
+	src:url('fonts/clickOnero.eot?#iefix-ic4nrt') format('embedded-opentype'),
+		url('fonts/clickOnero.woff?-ic4nrt') format('woff'),
+		url('fonts/clickOnero.ttf?-ic4nrt') format('truetype'),
+		url('fonts/clickOnero.svg?-ic4nrt#clickOnero') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -352,4 +352,10 @@
 }
 .iconFont-star:before {
 	content: "\e66d";
+}
+.iconFont-docPDF:before {
+	content: "\e66e";
+}
+.iconFont-docWEB:before {
+	content: "\e66f";
 }
