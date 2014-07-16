@@ -12,7 +12,8 @@
 			ulOptions: 'select-ul',
 			claseActivo: 'select-activo',
 			selectActive: 'select-active',
-			onChangeSelect: false
+			onChangeSelect: false,
+			disabledInput: 'select-disabled'
 		}, options), numberOfOptions, selectContent, styledSelect, list, listItems,
 		addClass = function(obj){
 			if($(obj).data('clase')){
@@ -32,6 +33,12 @@
 		},
 		addInputSelect = function(obj){
 			styledSelect = $(obj).siblings('.'+ defaults.inputSelect);
+			if($(obj).attr('disabled')){
+				if($(obj).data('inputselect')){
+					styledSelect.attr('disabled', 'disabled');
+				}
+				styledSelect.addClass(defaults.disabledInput).siblings('.'+defaults.claseTrigger).addClass(defaults.disabledInput);
+			}
 			var valor = $(obj).children('option').eq(0).text(),
 				classOption = '', inputValue;
 			$(obj).children('option').each(function(i){
@@ -77,10 +84,12 @@
 		},
 		clickingTrigger = function(obj){
 			$(obj).parent().on('click', 'span.'+ defaults.claseTrigger, function(e){
-				e.stopPropagation();
-				$('.'+defaults.ulOptions).hide();
-				$(obj).siblings('.'+ defaults.inputSelect).toggleClass(defaults.claseActivo);
-				$(this).next('ul.'+ defaults.ulOptions).toggle();
+				if(!$(this).hasClass(defaults.disabledInput)){
+					e.stopPropagation();
+					$('.'+defaults.ulOptions).hide();
+					$(obj).siblings('.'+ defaults.inputSelect).toggleClass(defaults.claseActivo);
+					$(this).next('ul.'+ defaults.ulOptions).toggle();
+				}
 			});
 			clickingOption(obj);
 		},

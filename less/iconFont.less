@@ -1,15 +1,3 @@
-@font-face {
-    font-family: 'clickOnero';
-    src: url('../../include/fonts/clickOnero.eot?-eeoz6s');
-    src: url('../../include/fonts/clickOnero.eot?#iefix-eeoz6s') format('embedded-opentype'),
-         url('../../include/fonts/clickOnero.woff?-eeoz6s') format('woff'),
-         url('../../include/fonts/clickOnero.ttf?-eeoz6s') format('truetype'),
-         url('../../include/fonts/clickOnero.svg?-eeoz6s#clickOnero') format('svg');
-    font-weight: normal;// 400
-    font-style: normal;
-}
-
-
 [class^="iconFont-"], [class*=" iconFont-"], [class^="vertical"], [class*=" vertical"] {
 	speak: none;
     font-variant: normal;
@@ -22,6 +10,45 @@
 }
 
 
+.iconFont-doc:before {
+	content: "\e67c";
+}
+.iconFont-right3:before {
+	content: "\e67a";
+}
+.iconFont-left3:before {
+	content: "\e67b";
+}
+.iconFont-c-bags:before {
+	content: "\e673";
+}
+.iconFont-c-calzado:before {
+	content: "\e674";
+}
+.iconFont-c-underwear:before {
+	content: "\e675";
+}
+.iconFont-c-vestidos:before {
+	content: "\e676";
+}
+.iconFont-c-outerwere:before {
+	content: "\e677";
+}
+.iconFont-c-bottoms:before {
+	content: "\e678";
+}
+.iconFont-c-tops:before {
+	content: "\e679";
+}
+.iconFont-slideBG:before {
+	content: "\e672";
+}
+.iconFont-clicknero:before {
+	content: "\e670";
+}
+.iconFont-o:before {
+	content: "\e671";
+}
 .iconFont-clickOnero2:before {
 	content: "\e600";
 }
@@ -393,6 +420,7 @@
 		}
 	}
 	&.bit13px {
+		font-size: 13px;
 		.size(13px, 13px);
 		.iconBG {
 			.border-radius(11px);
@@ -410,6 +438,16 @@
 		.iconBG {
 			.border-radius(13px);
 			.size(13px, 13px) !important;
+			top: 1px;
+			left: 1px;
+		}
+	}
+	&.bit16px {
+		font-size: 16px;
+		.size(16px, 16px);
+		.iconBG {
+			.border-radius(14px);
+			.size(14px, 14px) !important;
 			top: 1px;
 			left: 1px;
 		}
@@ -434,133 +472,4 @@
 			left: 5px;
 		}
 	}
-}
-.icon-black {
-	color: @black;
-}
-.icon-blueFB {
-	color: @blueFacebook;
-}
-.icon-blueTW {
-	color: @blueTwitter;
-}
-.icon-red {
-	color: @red;
-}
-.icon-green {
-	color: @green;
-}
-.icon-yellow {
-	color: @yellow;
-}
-
-.iconFont-left, .iconFont-right {
-	font-size: 25px;
-	position: absolute;
-	margin-top: -80px;
-	.iconButton;
-}
-.iconFont-left {
-	left: 0;
-}
-.iconFont-right {
-	right: 0;
-}
-.iconFont-close {
-	font-size: 12px !important;
-	text-decoration: none !important;
-}
-
-// ---- Verticales
-
-.iconVertical-r {
-	color: @black;
-	font-size: 80px !important;
-	line-height: 40px !important;
-	text-decoration: none !important;
-	&:hover {
-		color: @blueLink2;
-	}
-	&.vertical3 {
-		font-size: 100px !important;
-	}
-	&.vertical4 {
-		font-size: 100px !important;
-	}
-}
-.iconVertical-t {
-	font-size: 40px !important;
-	line-height: 20px !important;
-	text-decoration: none !important;
-	&.vertical3 {
-		font-size: 60px !important;
-	}
-	&.vertical4 {
-		font-size: 60px !important;
-	}
-}
-.iconVertical-n {
-	color: lighten(@black, 80%);
-	font-size: 45px !important;
-	text-decoration: none !important;
-	.transition(.3s);
-	&.vertical2:before {
-		content: "\e605";
-	}
-	&.vertical3:before {
-		content: "\e607";
-	}
-	&.vertical4:before {
-		content: "\e600";
-	}
-	&:hover {
-		background-color: @white;
-		&.vertical2:before {
-			content: "\e604";
-		}
-		&.vertical3:before {
-			content: "\e608";
-		}
-		&.vertical4:before {
-			content: "\e601";
-		}
-	}
-	&.current {
-		color: @black;
-		cursor: default;
-		background-color: @white;
-		&:hover {
-			&.vertical2:before {
-				content: "\e606";
-			}
-			&.vertical3:before {
-				content: "\e607";
-			}
-			&.vertical4:before {
-				content: "\e600";
-			}
-		}
-	}
-}
-.iconVertical-w {
-	font-size: 70px;
-	&.vertical3:before {
-		content: "\e608";
-	}
-	&.vertical3 {
-		font-size: 40px;
-	}
-	&.vertical4 {
-		font-size: 90px;
-	}
-}
-
-.vertical2:before {
-	content: "\e606";
-}
-.vertical3:before {
-	content: "\e609";
-}
-.vertical4:before {
-	content: "\e603";
 }

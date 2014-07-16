@@ -108,11 +108,20 @@
 					$(this).addClass('slide'+i);
 				});
 			}
-			if(size > defaults.slidesNum){
-				initSwiper(obj);
+			if(defaults.slidesNum){
+				if(size > defaults.slidesNum){
+					initSwiper(obj);
+				} else {
+					$(obj).siblings(defaults.arrowLeft).hide();
+					$(obj).siblings(defaults.arrowRight).hide();
+				}
 			} else {
-				$(obj).siblings(defaults.arrowLeft).hide();
-				$(obj).siblings(defaults.arrowRight).hide();
+				if(size > 2){
+					initSwiper(obj);
+				} else {
+					$(obj).siblings(defaults.arrowLeft).hide();
+					$(obj).siblings(defaults.arrowRight).hide();
+				}
 			}
 		};
 		return this.each(function(index){
