@@ -1,5 +1,6 @@
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //      IMAGEPRODUCT: Colocar imagen grande desde carrusel derecho
+//		Dependencias: jquery.zoom.js
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
 	jQuery.fn.imageProduct = function(options){
@@ -7,7 +8,8 @@
 			container: '.imageProduct-img',
 			imgs: '.imageProduct-slide',
 			activeSlide: false,
-			zoom: true
+			zoom: true,
+			clickClass: 'imageProduct-current'
 		}, options), bigImage, firstChild, imagenes, imagenGrande,
 		asignaValues = function(obj){
 			bigImage = $(obj).find(defaults.container);
@@ -22,7 +24,8 @@
 			} else {
 				imagenGrande = firstChild.attr('src');
 			}
-			imgGrande(obj);
+			firstChild.parent().addClass(defaults.clickClass).siblings().removeClass(defaults.clickClass);
+			imgGrande();
 		},
 		imgGrande = function(){
 			bigImage.html('<img src="'+ imagenGrande +'" alt="'+ firstChild.attr('alt') +'">').hide().fadeIn();
@@ -40,6 +43,7 @@
 					imgBg = $(this).attr('src');
 				}
 				$(this).click(function(){
+					$(this).parent().addClass(defaults.clickClass).siblings().removeClass(defaults.clickClass);
 					if(defaults.zoom){
 						bigImage.trigger('zoom.destroy');
 					}
