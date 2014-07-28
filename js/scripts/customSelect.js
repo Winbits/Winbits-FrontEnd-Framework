@@ -54,7 +54,7 @@
 				classOption = classOption + ' ' + $(obj).children('option').eq(0).data('icon');
 			}
 			if($(obj).data('inputselect')) {
-				styledSelect.attr('placeholder',valor);
+				styledSelect.attr('placeholder',$(obj).children('option').eq(0).text());
 				if(inputValue){
 					styledSelect.val(valor);
 				}
