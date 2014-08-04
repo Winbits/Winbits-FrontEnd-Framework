@@ -5,13 +5,14 @@
 	jQuery.fn.datePicker = function(options){
 		$.datepicker.setDefaults($.datepicker.regional['es']);
 		var defaults = $.extend({
-				wrapper: 'datepicker-wrapper'
+				wrapper: 'datepicker-wrapper',
+				option: {
+					showOn: 'both',
+					minDate: 0
+				}
 			}, options),
 		initDatepicker = function(obj){
-			$(obj).datepicker({
-				showOn: 'both',
-				minDate: 0
-			});
+			$(obj).datepicker(defaults.option);
 		},
 		wrappingDatepicker = function(obj){
 			$(obj).wrap('<div class="'+ defaults.wrapper + '"/>');
