@@ -2,7 +2,6 @@
 //      chooseDate: Elegir entre dos fechas, ideal para planer viaje
 // 		Dependencias: datePicker.js, toolTip.js, jQueryUI.js
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 /* 
 	Descripción del API: 
 	Necesita un div wrapper, dos divs que alojen cada input y dentro de estos,
