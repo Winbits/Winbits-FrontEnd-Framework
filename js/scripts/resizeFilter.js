@@ -16,7 +16,7 @@
 			filterHide: 'clickoneroFilter-hide'
 		}, options), toggleTxt = true,
 		countItems = function(obj){
-			var $lengthItems = $(obj).find(defaults.items);
+			var $lengthItems = $(obj).children(defaults.items);
 			if($lengthItems.length > defaults.contador) {
 				$(obj).append('<div class="' + defaults.filterMoreContainer + '"><span class="'+ defaults.filterClass + '">' + defaults.filterMoreText + '</span><span class="' + defaults.filterIcon + ' ' +defaults.filterMoreIcon + '"></span></div>');
 				addClass(obj);
@@ -24,9 +24,11 @@
 			}
 		},
 		addClass = function(obj){
-			$(obj).find(defaults.items).each(function(i){
+			$(obj).children(defaults.items).each(function(i){
 				if(i >= defaults.contador){
-					$(this).toggleClass(defaults.filterHide);
+					$(this).slideToggle(100, function(){
+						$(this).toggleClass(defaults.filterHide);
+					});
 				}
 			});
 		},
@@ -54,5 +56,37 @@
 		};
 		return this.each(function(){
 			countItems(this);
+		});
+	};
+
+	jQuery.fn.toggleCheck = function(options){
+		var defaults = $.extend({
+			titleParent: 'h4',
+			checkboxSpan: '.checkbox-span',
+			selectClass: 'checkbox-checked',
+			unSelectClass: 'checkbox-unchecked',
+			subDiv: '.filter-subContainer',
+			subSubDiv: 'filter-subsub'
+		}, options),
+		checkChilds = function(obj, siblings, slideToggle){
+			if($(obj).find('input').prop('checked')){
+				$(siblings).find(defaults.checkboxSpan).removeClass(defaults.unSelectClass).addClass(defaults.selectClass);
+				$(siblings).find('input').prop('checked', true);
+				$(slideToggle).slideDown();
+			} else {
+				$(siblings).find(defaults.checkboxSpan).removeClass(defaults.selectClass).addClass(defaults.unSelectClass);
+				$(siblings).find('input').prop('checked', false);
+				$(slideToggle).slideUp();
+			}
+		};
+		return this.each(function(){
+			var $subDiv;
+			if($(this).parent().is(defaults.titleParent)){
+				$subDiv = $(this).parent().parent().find(defaults.subSubDiv);
+				checkChilds(this, $(this).parent().siblings(), $subDiv);
+			} else if($(this).parent().is(defaults.subDiv)){
+				$subDiv = $(this).siblings(defaults.subSubDiv);
+				checkChilds(this, $(this).siblings(defaults.subSubDiv), $subDiv);
+			}
 		});
 	};

@@ -408,42 +408,6 @@
 .iconFont-upbanner:before {
 	content: "\e67e";
 }
-.vertical2:hover:before {
-	content: "\e67f";
-}
-.vertical2:before {
-	content: "\e680";
-}
-.vertical3:hover:before {
-	content: "\e681";
-}
-.vertical3:before {
-	content: "\e682";
-}
-.vertical4:hover:before {
-	content: "\e683";
-}
-.vertical4:before {
-	content: "\e684";
-}
-.vertical6:hover:before {
-	content: "\e685";
-}
-.vertical6:before {
-	content: "\e686";
-}
-.vertical7:hover:before {
-	content: "\e687";
-}
-.vertical7:before {
-	content: "\e688";
-}
-.vertical8:hover:before {
-	content: "\e689";
-}
-.vertical8:before {
-	content: "\e68a";
-}
 .iconFont-viajes:before {
 	content: "\e68b";
 }
@@ -498,10 +462,28 @@
   text-decoration: none !important;
 }
 .iconVertical-t.vertical3 {
-  font-size: 60px !important;
+	font-size: 60px !important;
 }
 .iconVertical-t.vertical4 {
-  font-size: 60px !important;
+	font-size: 60px !important;
+}
+.iconVertical-t.vertical2:before {
+	content: "\e64e";
+}
+.iconVertical-t.vertical3:before {
+	content: "\e659";
+}
+.iconVertical-t.vertical4:before {
+	content: "\e619";
+}
+.iconVertical-t.vertical6:before {
+	content: "\e694";
+}
+.iconVertical-t.vertical7:before {
+	content: "\e604";
+}
+.iconVertical-t.vertical8:before {
+	content: "\e66a";
 }
 .iconVertical-n {
   color: #cccccc;
@@ -521,6 +503,42 @@
   color: #000000;
   cursor: default;
   background-color: #ffffff;
+}
+.iconVertical-n.vertical2:hover:before {
+	content: "\e67f";
+}
+.iconVertical-n.vertical2:before {
+	content: "\e680";
+}
+.iconVertical-n.vertical3:hover:before {
+	content: "\e681";
+}
+.iconVertical-n.vertical3:before {
+	content: "\e682";
+}
+.iconVertical-n.vertical4:hover:before {
+	content: "\e683";
+}
+.iconVertical-n.vertical4:before {
+	content: "\e684";
+}
+.iconVertical-n.vertical6:hover:before {
+	content: "\e685";
+}
+.iconVertical-n.vertical6:before {
+	content: "\e686";
+}
+.iconVertical-n.vertical7:hover:before {
+	content: "\e687";
+}
+.iconVertical-n.vertical7:before {
+	content: "\e688";
+}
+.iconVertical-n.vertical8:hover:before {
+	content: "\e689";
+}
+.iconVertical-n.vertical8:before {
+	content: "\e68a";
 }
 .iconVertical-w {
   font-size: 70px;
