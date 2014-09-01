@@ -467,22 +467,22 @@
 .iconVertical-t.vertical4 {
 	font-size: 60px !important;
 }
-.iconVertical-t.vertical2:before {
+.iconVertical-t.vertical2:before, .iconVertical-r.vertical2:before {
 	content: "\e64e";
 }
-.iconVertical-t.vertical3:before {
+.iconVertical-t.vertical3:before, .iconVertical-r.vertical3:before {
 	content: "\e659";
 }
-.iconVertical-t.vertical4:before {
+.iconVertical-t.vertical4:before, .iconVertical-r.vertical4:before {
 	content: "\e619";
 }
-.iconVertical-t.vertical6:before {
+.iconVertical-t.vertical6:before, .iconVertical-r.vertical6:before {
 	content: "\e694";
 }
-.iconVertical-t.vertical7:before {
+.iconVertical-t.vertical7:before, .iconVertical-r.vertical7:before {
 	content: "\e604";
 }
-.iconVertical-t.vertical8:before {
+.iconVertical-t.vertical8:before, .iconVertical-r.vertical8:before {
 	content: "\e66a";
 }
 .iconVertical-n {
@@ -594,6 +594,34 @@
 .winbit-color.iconWinbits95px .iconBG.secondI {
   left: 65px;
 }
+.winbit-color.iconWinbits45px {
+  height: 12px;
+  width: 45px;
+}
+.winbit-color.iconWinbits45px .iconFont-winbits {
+  font-size: 45px;
+  left: 0;
+  line-height: 8px;
+  top: 0;
+}
+.winbit-color.iconWinbits45px .iconBG {
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  height: 3px !important;
+  width: 3px !important;
+  top: -1px;
+}
+.winbit-color.iconWinbits45px .iconBG.firstI {
+  left: 13px;
+}
+.winbit-color.iconWinbits45px .iconBG.secondI {
+  left: 31px;
+}
+
 .iconBit {
   color: #897d20;
   position: relative;
