@@ -1,0 +1,1 @@
+jQuery.fn.maskImg=function(t){var s=$.extend({date:"leftmargin",css:"marginLeft"},t);return this.each(function(){if($(this).data(s.date))$(this).css(s.css,"-"+$(this).data(s.date)+"px");else{var t=$(this).parent().outerWidth(),e=$(this).outerWidth();$(this).css(s.css,"-"+(e-t)/2+"px")}})};

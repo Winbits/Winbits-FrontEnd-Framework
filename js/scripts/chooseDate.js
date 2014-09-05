@@ -33,6 +33,8 @@
 	defaultDate: Fecha inicial. Por default es el día actual.
 	minDate: Fecha mínima. Por default es 0 que equivale al día actual.
 */
+// Para que JSLint ignore la notación ['es']:
+/*jshint sub:true*/
 	jQuery.fn.chooseDate = function (options) {
 		var defaults = $.extend({
 			fromDate: '.fromDate',

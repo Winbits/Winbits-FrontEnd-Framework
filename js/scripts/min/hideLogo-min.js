@@ -1,0 +1,1 @@
+jQuery.fn.hideLogo=function(){return this.each(function(){var o=$(this),n=o.offset();$(window).scroll(function(){$(window).scrollTop()>n.top?o.slideUp():o.slideDown()})})};

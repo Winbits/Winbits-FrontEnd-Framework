@@ -1,0 +1,1 @@
+jQuery.fn.tabs=function(e){var t=$.extend({tabClass:"tabClass",item:"li",tabSelected:"tabSelected"},e);return this.each(function(){$(t.tabClass).hide().eq(0).show(),$(this).find(t.item).click(function(e){e.preventDefault(),$(t.tabClass).hide();var a=$(this).find("a").attr("href");$(a).fadeToggle(),$(this).addClass(t.tabSelected).siblings().removeClass(t.tabSelected)})})};

@@ -1,0 +1,1 @@
+jQuery.fn.changeQuestion=function(n){var t=$.extend({trigger:"td",changer:".changer"},n),e=function(n){$(n).find(t.trigger).each(function(){var e=$(this);e.click(function(){$(n).find(t.changer).find("p").html(e.data("title")),$(n).find(t.changer).find('input[type="submit"]').attr("data-encuesta",e.data("encuesta"))})})};return this.each(function(){e(this)})};

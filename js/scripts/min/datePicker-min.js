@@ -1,0 +1,1 @@
+jQuery.fn.datePicker=function(e){$.datepicker.setDefaults($.datepicker.regional.es);var t=$.extend({wrapper:"datepicker-wrapper",option:{showOn:"both",minDate:0}},e),r=function(e){$(e).datepicker(t.option)},i=function(e){$(e).wrap('<div class="'+t.wrapper+'"/>'),r(e)};return this.each(function(){i(this)})};

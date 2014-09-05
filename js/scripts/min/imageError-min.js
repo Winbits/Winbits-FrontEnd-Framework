@@ -1,0 +1,1 @@
+jQuery.fn.imageError=function(r){var t=$.extend({src:"images/misc/noImage.jpg",alt:"No se encontró la imagen"},r);return this.each(function(){$(this).error(function(){$(this).attr({src:t.src,alt:t.alt})})})};

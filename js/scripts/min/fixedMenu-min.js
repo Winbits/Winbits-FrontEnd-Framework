@@ -1,0 +1,1 @@
+jQuery.fn.fixedMenu=function(s){var e=$.extend({fixedClass:"fixedClass",offsetTop:550},s);return this.each(function(){var s=$(this);$(window).scroll(function(){$(window).scrollTop()>550?s.addClass(e.fixedClass):s.removeClass(e.fixedClass)})})};

@@ -1,0 +1,1 @@
+jQuery.fn.requiredField=function(i){var r=$.extend({wrapper:"required-wrapper",icon:"iconFont-star"},i),e=function(i){$(i).wrap('<div class="'+r.wrapper+'"/>'),$(i).parent().append('<span class="'+r.icon+'" data-tooltip="'+$(i).data("requiredfield")+'"/>'),$(i).siblings("."+r.icon).toolTip()};return this.each(function(){e(this)})};

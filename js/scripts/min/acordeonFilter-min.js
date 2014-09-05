@@ -1,0 +1,1 @@
+jQuery.fn.acordeonFilter=function(e){var t=$.extend({trigger:"h3",claseActivo:"activo",contenedor:".containerAcordeon"},e);return this.each(function(){$(this).find(t.trigger).click(function(){$(this).next(t.contenedor).slideToggle(),$(this).toggleClass(t.claseActivo)})})};

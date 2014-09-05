@@ -50,7 +50,6 @@
 		//  colorLeft: Color a la izquierda
 		//  colorRight: Color a la derecha
 		appyGradient = function(){
-			
 			$('html').css({
 				backgroundImage: 'linear-gradient(rgb(' + colorR1 + ', ' + colorG1 + ', ' + colorB1 + '), rgb(' + colorR2 + ', ' + colorG2 + ', ' + colorB2 + '))'
 			});
@@ -225,17 +224,17 @@
 		return this.each(function(){
 			// Asignar a las variables el color inicial para que lo ponga al HTML:
 			// Color superior R
-			colorR1 = defaults.colorInit1.r;
+			colorR1 = defaults.colorLeft1.r;
 			// Color superior G
-			colorG1 = defaults.colorInit1.g;
+			colorG1 = defaults.colorLeft1.g;
 			// Color superior B
-			colorB1 = defaults.colorInit1.b;
+			colorB1 = defaults.colorLeft1.b;
 			// Color inferior R
-			colorR2 = defaults.colorInit2.r;
+			colorR2 = defaults.colorLeft2.r;
 			// Color inferior G
-			colorG2 = defaults.colorInit2.g;
+			colorG2 = defaults.colorLeft2.g;
 			// Color inferior B
-			colorB2 = defaults.colorInit2.b;
+			colorB2 = defaults.colorLeft2.b;
 			// Aplicar el gradiente con los valores puestos en las variables anteriores
 			appyGradient();
 			// Inicia el listener para navegadores de escritorio e inicia el cambio de color

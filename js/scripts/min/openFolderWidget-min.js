@@ -1,0 +1,1 @@
+jQuery.fn.openFolderWidget=function(e){var n=$.extend({evento:"click",trigger:"#winbits-widget .openClose",clase:"downBar"},e),t=function(e){$(e).hasClass(n.clase)?$(e).removeClass(n.clase):$(e).addClass(n.clase)};return this.each(function(){var e=this;$(document).on(n.evento,n.trigger,function(){t(e)})})};

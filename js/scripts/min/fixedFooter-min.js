@@ -1,0 +1,1 @@
+jQuery.fn.fixedFooter=function(e){var i=$.extend({clase:"footer-fixed",minHeigth:500},e),n=function(e){$(window).height()>i.minHeigth?$(e).addClass(i.clase):$(e).removeClass(i.clase)};return this.each(function(){var e=this;n(e),$(window).resize(function(){n(e)})})};

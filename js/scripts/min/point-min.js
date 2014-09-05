@@ -1,0 +1,1 @@
+jQuery.fn.point=function(t){var o=$.extend({tooltip:"tooltip"},t);return this.each(function(){$(this).data("top")&&$(this).css({top:$(this).data("top")+"px",left:$(this).data("left")+"px"})}).toolTip({clase:o.tooltip})};

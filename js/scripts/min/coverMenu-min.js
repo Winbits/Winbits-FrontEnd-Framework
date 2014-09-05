@@ -1,0 +1,1 @@
+jQuery.fn.coverMenu=function(e){var v=$.extend({coverDiv:".coverMenu",coverDivClass:".coverMenu-class"},e);return this.each(function(){$(this).on({mouseenter:function(){$(v.coverDiv).addClass(v.coverDivClass)},mouseleave:function(){$(v.coverDiv).removeClass(v.coverDivClass)}})})};
