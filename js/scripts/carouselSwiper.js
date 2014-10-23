@@ -59,6 +59,9 @@
 			externalSwipeTo: false,
 			externalSwipeToItem: '.swipeToObj',
 			externalSwipeScrollTo: false,
+			lastAction: false,
+			anulateLastAction: false,
+			numSlideCarousel: 'carrusel-slides-'
 		}, options),
 		size = 0, // Variable que servirá para escribir el número de slides que tiene el carrusel
 		// 1. Método que calcula cuántos slides tiene el carrusel:
@@ -81,6 +84,9 @@
 					initSwiper(obj);
 				// Si el número de slides es menor al número de slides por vista
 				} else {
+					// Agregar clase con el número de slides
+					$(obj).addClass(defaults.numSlideCarousel+size);
+					$(obj).find(defaults.slideCSS).first().addClass('swiper-slide-active');
 					// Oculta las flechas derecha e izquierda
 					$(obj).siblings(defaults.arrowLeft).hide();
 					$(obj).siblings(defaults.arrowRight).hide();
@@ -109,14 +115,24 @@
 				// Agrega al objeto del carrusel el callback Touch End
 				swiper.addCallback('TouchEnd', function(){
 					// Cuando se ejecute el callback, verifica el estado de las flechas con removeArrows
-					$(obj).removeArrows({
-						addCallback: 1, // Cambia el valor default de addCallback de 0 a 1
-						arrowLeft: defaults.arrowLeft, // Flecha izquierda/anterior/prev
-						arrowRight: defaults.arrowRight, // Flecha derecha/siguiente/next
-						slidesNum: defaults.slidesNum, // Número de slides por vista
-						slideCSS: defaults.slideCSS, // Clase del slide del carrusel
-						swiper: swiper
-					});
+					if(!(defaults.loop)){
+						// Verificar posición de las flechas (si se deben mostrar o no)
+						prepareArrow(obj, swiper);
+					}
+				});
+				swiper.addCallback('SlideNext', function(){
+					// Cuando se ejecute el callback, verifica el estado de las flechas con removeArrows
+					if(!(defaults.loop)){
+						// Verificar posición de las flechas (si se deben mostrar o no)
+						prepareArrow(obj, swiper);
+					}
+				});
+				swiper.addCallback('SlidePrev', function(){
+					// Cuando se ejecute el callback, verifica el estado de las flechas con removeArrows
+					if(!(defaults.loop)){
+						// Verificar posición de las flechas (si se deben mostrar o no)
+						prepareArrow(obj, swiper);
+					}
 				});
 			}
 			// Si el slide inicial es diferente al primero
@@ -151,7 +167,10 @@
 			swiper.params.queueEndCallbacks = true;
 			// Si necesitamos hacer swipeTo desde un objeto externo
 			swiper.params.onSlideChangeEnd = function(swiper){
-				prepareArrow(obj, swiper);
+				if(!(defaults.loop)){
+					// Verificar posición de las flechas (si se deben mostrar o no)
+					prepareArrow(obj, swiper);
+				}
 			};
 			if(defaults.externalSwipeTo){
 				// Atachamos al evento click la función
@@ -188,7 +207,10 @@
 		//  swiper: El objeto swiper creado para el carrusel
 		initArrow = function(obj, swiper){
 			// Verificar posición de las flechas (si se deben mostrar o no)
-			prepareArrow(obj, swiper);
+			if(!(defaults.loop)){
+				// Verificar posición de las flechas (si se deben mostrar o no)
+				prepareArrow(obj, swiper);
+			}
 			// Busca en los hermanos del objeto la flecha izquierda/anterior/prev y en el click
 			$(obj).siblings(defaults.arrowLeft).on('click', function(e) {
 				// Deten la propagación de eventos
@@ -236,7 +258,9 @@
 				arrowRight: defaults.arrowRight, // Flecha derecha/siguiente/next
 				slidesNum: defaults.slidesNum, // Número de slides por vista
 				slideCSS: defaults.slideCSS, // Clase del slide del carrusel
-				swiper: swiper
+				swiper: swiper,
+				lastAction: defaults.lastAction,
+				anulateLastAction: defaults.anulateLastAction
 			});
 		},
 		// 6. Método que mueve el carrusel de forma exterior desde un índice dado:
@@ -299,10 +323,10 @@
 			arrowRight: '.arrowRight',
 			slideActive: 'swiper-slide-active',
 			addCallback: 0,
-			swiper: 'swiper'
-		}, options),
-		// Variable que contendrá el valor activo
-		active = 0, activeSlide = '';
+			swiper: 'swiper',
+			lastAction: false,
+			anulateLastAction: false
+		}, options);
 		// INICIO
 		return this.each(function(){
 			// Contamos la cantidad de slides del carrusel
@@ -316,43 +340,43 @@
 			// Si tiene número de slides por vista
 			if (defaults.slidesNum){
 				// Asignale el penúltimo slide
-				pointOfNoReturn = size - (defaults.slidesNum - 1);
+				pointOfNoReturn = size - defaults.slidesNum;
 			}
 			// Si la cantidad de slides es mayor al número de slides a mostrar por vista
 			if(size > defaults.slidesNum){
-				// El valor activo cambiará al valor callback
-				active =+ defaults.addCallback;
 				// Busca en cada uno de los slides
 				$(this).find(defaults.slideCSS).each(function(i){
 					if(!$(this).hasClass('slide'+i)){
 						$(this).addClass('slide'+i);
 					}
-					// Si encuentras que tiene la clase slideActive
-					if($(this).hasClass(defaults.slideActive)){
-						// El valor activo cambia al valor del índice mas uno
-						active = i+1;
-						activeSlide = $(this);
+					if(i === pointOfNoReturn){
+						if(!$(this).hasClass('pointOfNoReturn')){
+							$(this).addClass('pointOfNoReturn');
+						}
 					}
 				});
-				// Si el valor activo es mayor o igual a 1
-				if (activeSlide.hasClass('slide0')){
-				// if(active === 1){
-					// Oculta la flecha izquierda
-					left.slideUp();
-					// Muestra la flecha derecha
-					right.slideDown();
-				// Si el valor activo es menor o igual al penúltimo slide
-				} else if(active >= pointOfNoReturn){
-					// Muestra la flecha izquierda
-					left.slideDown();
-					// Oculta la flecha derecha
-					right.slideUp();
-				// Si el valor activo es el default, o sea 0
-				} else {
-					// Oculta las flechas derecha e izquierda
-					left.slideDown();
-					right.slideDown();
-				}
+				$(this).find('.'+defaults.slideActive).each(function(){
+					if($(this).hasClass('pointOfNoReturn')){
+						left.show();
+						right.hide();
+						if(defaults.lastAction){
+							defaults.lastAction();
+						}
+					} else if($(this).hasClass('slide0')){
+						left.hide();
+						right.show();
+						if(defaults.anulateLastAction){
+							defaults.anulateLastAction();
+						}
+					} else {
+						left.show();
+						right.show();
+						if(defaults.anulateLastAction){
+							defaults.anulateLastAction();
+						}
+					}
+				});
+					
 			// Si la cantidad de slides es menor al número de slides a mostrar por vista
 			} else {
 				// Oculta las flechas derecha e izquierda

@@ -23,8 +23,8 @@
 		};
 		return this.each(function(){
 			var objeto = this,
-			wpOb = $(objeto).next(defaults.contenedor).find(defaults.wrapper);
-			claseObj = $(objeto).attr('class').split(' ')[0],
+				wpOb = $(objeto).next(defaults.contenedor).find(defaults.wrapper);
+			claseObj = $(objeto).attr('class').split(' ')[0];
 			$(objeto).on('click', function(e){
 				e.stopPropagation();
 				if($(objeto).siblings(defaults.contenedor).css('display') === 'none'){

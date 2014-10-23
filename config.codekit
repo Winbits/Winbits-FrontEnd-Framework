@@ -1,16 +1,7 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "17682",
+"creatorBuild": "17756",
 "files": {
-	"\/css\/iconFont.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/iconFont.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/js\/libs\/fancybox\/fancybox.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -19,61 +10,8 @@
 		"outputAbbreviatedPath": "\/js\/libs\/fancybox\/min\/fancybox-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
-		},
-	"\/js\/libs\/fancybox\/fancybox_overlay.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1003,
-		"inputAbbreviatedPath": "\/js\/libs\/fancybox\/fancybox_overlay.png",
-		"outputAbbreviatedPath": "\/js\/libs\/fancybox\/fancybox_overlay.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/fancybox\/fancybox_sprite.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1362,
-		"inputAbbreviatedPath": "\/js\/libs\/fancybox\/fancybox_sprite.png",
-		"outputAbbreviatedPath": "\/js\/libs\/fancybox\/fancybox_sprite.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/fancybox\/fancybox_sprite@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6553,
-		"inputAbbreviatedPath": "\/js\/libs\/fancybox\/fancybox_sprite@2x.png",
-		"outputAbbreviatedPath": "\/js\/libs\/fancybox\/fancybox_sprite@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/fancybox\/helpers\/fancybox_buttons.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1080,
-		"inputAbbreviatedPath": "\/js\/libs\/fancybox\/helpers\/fancybox_buttons.png",
-		"outputAbbreviatedPath": "\/js\/libs\/fancybox\/helpers\/fancybox_buttons.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/fancybox\/helpers\/jquery.fancybox-buttons.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/libs\/fancybox\/helpers\/jquery.fancybox-buttons.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		},
 	"\/js\/libs\/fancybox\/helpers\/jquery.fancybox-buttons.js": {
 		"fileType": 64,
@@ -83,7 +21,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/fancybox\/helpers\/min\/jquery.fancybox-buttons-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/fancybox\/helpers\/jquery.fancybox-media.js": {
@@ -94,17 +32,8 @@
 		"outputAbbreviatedPath": "\/js\/libs\/fancybox\/helpers\/min\/jquery.fancybox-media-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
-		},
-	"\/js\/libs\/fancybox\/helpers\/jquery.fancybox-thumbs.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/libs\/fancybox\/helpers\/jquery.fancybox-thumbs.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		},
 	"\/js\/libs\/fancybox\/helpers\/jquery.fancybox-thumbs.js": {
 		"fileType": 64,
@@ -114,17 +43,8 @@
 		"outputAbbreviatedPath": "\/js\/libs\/fancybox\/helpers\/min\/jquery.fancybox-thumbs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
-		},
-	"\/js\/libs\/fancybox\/jquery.fancybox.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/libs\/fancybox\/jquery.fancybox.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		},
 	"\/js\/libs\/fancybox\/jquery.fancybox.js": {
 		"fileType": 64,
@@ -134,7 +54,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/fancybox\/min\/jquery.fancybox-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/fancybox\/jquery.fancybox.pack.js": {
@@ -145,7 +65,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/fancybox\/min\/jquery.fancybox.pack-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/jquery-1.8.3.min.js": {
@@ -156,7 +76,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/min\/jquery-1.8.3.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/jquery.browser.min.js": {
@@ -167,7 +87,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/min\/jquery.browser.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/jquery.scrollTo-1.4.2-min.js": {
@@ -178,160 +98,8 @@
 		"outputAbbreviatedPath": "\/js\/libs\/min\/jquery.scrollTo-1.4.2-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_flat_0_aaaaaa_40x100.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 149,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_flat_75_ffffff_40x100.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 147,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_flat_75_ffffff_40x100.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_flat_75_ffffff_40x100.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_55_fbf9ee_1x400.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 117,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_55_fbf9ee_1x400.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_55_fbf9ee_1x400.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_65_ffffff_1x400.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 95,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_65_ffffff_1x400.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_65_ffffff_1x400.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_75_dadada_1x400.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 110,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_75_dadada_1x400.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_75_dadada_1x400.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_75_e6e6e6_1x400.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 110,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_75_e6e6e6_1x400.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_75_e6e6e6_1x400.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_95_fef1ec_1x400.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 118,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_95_fef1ec_1x400.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_glass_95_fef1ec_1x400.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 101,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_222222_256x240.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4194,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_222222_256x240.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_222222_256x240.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_2e83ff_256x240.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4194,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_2e83ff_256x240.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_2e83ff_256x240.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_454545_256x240.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4194,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_454545_256x240.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_454545_256x240.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_888888_256x240.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4194,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_888888_256x240.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_888888_256x240.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_cd0a0a_256x240.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4194,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_cd0a0a_256x240.png",
-		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/images\/ui-icons_cd0a0a_256x240.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/jquery-ui-1.9.2.custom.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/jquery-ui-1.9.2.custom.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		},
 	"\/js\/libs\/jQueryUI1.9.2\/jquery-ui-1.9.2.custom.js": {
 		"fileType": 64,
@@ -341,17 +109,8 @@
 		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/min\/jquery-ui-1.9.2.custom-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
-		},
-	"\/js\/libs\/jQueryUI1.9.2\/jquery-ui-1.9.2.custom.min.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/jquery-ui-1.9.2.custom.min.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		},
 	"\/js\/libs\/jQueryUI1.9.2\/jquery-ui-1.9.2.custom.min.js": {
 		"fileType": 64,
@@ -361,7 +120,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/min\/jquery-ui-1.9.2.custom.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/jQueryUI1.9.2\/jquery-ui-1.9.2.js": {
@@ -372,17 +131,19 @@
 		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/min\/jquery-ui-1.9.2-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/libs\/jscrollpane\/jquery.jscrollpane.css": {
-		"fileType": 16,
-		"ignore": 0,
+	"\/js\/libs\/jQueryUI1.9.2\/min\/jquery-ui-1.9.2-min.js": {
+		"fileType": 64,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/libs\/jscrollpane\/jquery.jscrollpane.css",
-		"outputAbbreviatedPath": "No Output Path",
+		"inputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/min\/jquery-ui-1.9.2-min.js",
+		"outputAbbreviatedPath": "\/js\/libs\/jQueryUI1.9.2\/min\/min\/jquery-ui-1.9.2-min-min.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/jscrollpane\/jquery.jscrollpane.min.js": {
 		"fileType": 64,
@@ -392,7 +153,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/jscrollpane\/min\/jquery.jscrollpane.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/jscrollpane\/jquery.mousewheel.js": {
@@ -403,7 +164,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/jscrollpane\/min\/jquery.mousewheel-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/jscrollpane\/mwheelIntent.js": {
@@ -414,7 +175,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/jscrollpane\/min\/mwheelIntent-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/masonry.pkgd.min.js": {
@@ -425,7 +186,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/min\/masonry.pkgd.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/modernizr-2.6.2.js": {
@@ -436,7 +197,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/min\/modernizr-2.6.2-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/oldbrowser.js": {
@@ -447,7 +208,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/min\/oldbrowser-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/swiper\/idangerous.swiper-2.0.min.js": {
@@ -458,7 +219,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/swiper\/min\/idangerous.swiper-2.0.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/swiper\/idangerous.swiper-2.4.3.js": {
@@ -469,7 +230,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/swiper\/min\/idangerous.swiper-2.4.3-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/swiper\/idangerous.swiper.scrollbar-2.0.js": {
@@ -478,6 +239,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/libs\/swiper\/idangerous.swiper.scrollbar-2.0.js",
 		"outputAbbreviatedPath": "\/js\/libs\/swiper\/min\/idangerous.swiper.scrollbar-2.0-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/libs\/swiper\/min\/swiper-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/libs\/swiper\/min\/swiper-min.js",
+		"outputAbbreviatedPath": "\/js\/libs\/swiper\/min\/min\/swiper-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -491,7 +263,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/swiper\/min\/swiper-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/waypoints\/waypoints.js": {
@@ -502,7 +274,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/waypoints\/min\/waypoints-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/waypoints\/waypoints.min.js": {
@@ -513,7 +285,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/waypoints\/min\/waypoints.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/zoom\/jquery-1.8.3.min.js": {
@@ -524,7 +296,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/zoom\/min\/jquery-1.8.3.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/libs\/zoom\/jquery.zoom.js": {
@@ -535,7 +307,7 @@
 		"outputAbbreviatedPath": "\/js\/libs\/zoom\/min\/jquery.zoom-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/scripts\/acordeon.js": {
@@ -551,7 +323,7 @@
 		},
 	"\/js\/scripts\/acordeon2.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/scripts\/acordeon2.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/acordeon2-min.js",
@@ -562,8 +334,8 @@
 		},
 	"\/js\/scripts\/acordeonFilter.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/acordeonFilter.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/acordeonFilter-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -584,8 +356,8 @@
 		},
 	"\/js\/scripts\/buyers.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/buyers.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/buyers-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -595,8 +367,8 @@
 		},
 	"\/js\/scripts\/carouselSwiper.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/carouselSwiper.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/carouselSwiper-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -606,8 +378,8 @@
 		},
 	"\/js\/scripts\/carruselVerticalSwiper.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/carruselVerticalSwiper.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/carruselVerticalSwiper-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -617,8 +389,8 @@
 		},
 	"\/js\/scripts\/changeBox.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/changeBox.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/changeBox-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -628,8 +400,8 @@
 		},
 	"\/js\/scripts\/changeOffer.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/changeOffer.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/changeOffer-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -639,7 +411,7 @@
 		},
 	"\/js\/scripts\/changeQuestion.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/scripts\/changeQuestion.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/changeQuestion-min.js",
@@ -650,8 +422,8 @@
 		},
 	"\/js\/scripts\/chooseDate.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/chooseDate.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/chooseDate-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -661,8 +433,8 @@
 		},
 	"\/js\/scripts\/closeVideoHome.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/closeVideoHome.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/closeVideoHome-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -672,8 +444,8 @@
 		},
 	"\/js\/scripts\/coverMenu.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/coverMenu.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/coverMenu-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -683,8 +455,8 @@
 		},
 	"\/js\/scripts\/createGift.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/createGift.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/createGift-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -694,8 +466,8 @@
 		},
 	"\/js\/scripts\/customCheckbox.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/customCheckbox.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/customCheckbox-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -705,8 +477,8 @@
 		},
 	"\/js\/scripts\/customRadio.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/customRadio.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/customRadio-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -716,8 +488,8 @@
 		},
 	"\/js\/scripts\/customSelect.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/customSelect.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/customSelect-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -727,8 +499,8 @@
 		},
 	"\/js\/scripts\/customSlider.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/customSlider.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/customSlider-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -747,10 +519,21 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/scripts\/customSlider3.js": {
+	"\/js\/scripts\/customSlider3-ck.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/scripts\/customSlider3-ck.js",
+		"outputAbbreviatedPath": "\/js\/scripts\/min\/customSlider3-ck-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/scripts\/customSlider3.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/customSlider3.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/customSlider3-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -760,8 +543,8 @@
 		},
 	"\/js\/scripts\/datePicker.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/datePicker.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/datePicker-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -771,8 +554,8 @@
 		},
 	"\/js\/scripts\/dropMainMenu.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/dropMainMenu.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/dropMainMenu-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -782,8 +565,8 @@
 		},
 	"\/js\/scripts\/fancyBox.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/fancyBox.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/fancyBox-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -793,8 +576,8 @@
 		},
 	"\/js\/scripts\/fixedFooter.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/fixedFooter.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/fixedFooter-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -826,8 +609,8 @@
 		},
 	"\/js\/scripts\/hideLogo.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/hideLogo.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/hideLogo-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -837,8 +620,8 @@
 		},
 	"\/js\/scripts\/imageError.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/imageError.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/imageError-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -848,8 +631,8 @@
 		},
 	"\/js\/scripts\/imageProduct.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/imageProduct.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/imageProduct-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -870,8 +653,8 @@
 		},
 	"\/js\/scripts\/mailingMenuCheckboxs.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/mailingMenuCheckboxs.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/mailingMenuCheckboxs-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -881,7 +664,7 @@
 		},
 	"\/js\/scripts\/makeCookie.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/scripts\/makeCookie.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/makeCookie-min.js",
@@ -892,8 +675,8 @@
 		},
 	"\/js\/scripts\/maskImg.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/maskImg.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/maskImg-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1105,6 +888,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/scripts\/min\/customSlider2-min.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/min\/customSlider2-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/scripts\/min\/customSlider3-ck-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/scripts\/min\/customSlider3-ck-min.js",
+		"outputAbbreviatedPath": "\/js\/scripts\/min\/min\/customSlider3-ck-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -1462,6 +1256,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/js\/scripts\/min\/showRecommendations-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/scripts\/min\/showRecommendations-min.js",
+		"outputAbbreviatedPath": "\/js\/scripts\/min\/min\/showRecommendations-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/scripts\/min\/tabs-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -1486,8 +1291,8 @@
 		},
 	"\/js\/scripts\/moveGradient.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/moveGradient.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/moveGradient-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1508,8 +1313,8 @@
 		},
 	"\/js\/scripts\/openFolderWidget.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/openFolderWidget.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/openFolderWidget-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1519,8 +1324,8 @@
 		},
 	"\/js\/scripts\/openProduct.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/openProduct.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/openProduct-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1541,8 +1346,8 @@
 		},
 	"\/js\/scripts\/point.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/point.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/point-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1552,8 +1357,8 @@
 		},
 	"\/js\/scripts\/preloader.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/preloader.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/preloader-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1563,8 +1368,8 @@
 		},
 	"\/js\/scripts\/requiredField.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/requiredField.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/requiredField-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1574,8 +1379,8 @@
 		},
 	"\/js\/scripts\/resizeFilter.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/resizeFilter.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/resizeFilter-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1583,10 +1388,21 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/scripts\/scrollItPage.js": {
+	"\/js\/scripts\/resizeInput.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/scripts\/resizeInput.js",
+		"outputAbbreviatedPath": "\/js\/scripts\/min\/resizeInput-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/scripts\/scrollItPage.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/scrollItPage.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/scrollItPage-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1607,8 +1423,8 @@
 		},
 	"\/js\/scripts\/scrollpane.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/scrollpane.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/scrollpane-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1629,7 +1445,7 @@
 		},
 	"\/js\/scripts\/setCalendar.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/scripts\/setCalendar.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/setCalendar-min.js",
@@ -1640,7 +1456,7 @@
 		},
 	"\/js\/scripts\/showBannerCookie.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/scripts\/showBannerCookie.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/showBannerCookie-min.js",
@@ -1651,8 +1467,8 @@
 		},
 	"\/js\/scripts\/showBit.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/showBit.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/showBit-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1662,8 +1478,8 @@
 		},
 	"\/js\/scripts\/showDiv.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/showDiv.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/showDiv-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1673,8 +1489,8 @@
 		},
 	"\/js\/scripts\/showHideDiv.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/showHideDiv.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/showHideDiv-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1682,10 +1498,21 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/scripts\/tabs.js": {
+	"\/js\/scripts\/showRecommendations.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/scripts\/showRecommendations.js",
+		"outputAbbreviatedPath": "\/js\/scripts\/min\/showRecommendations-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/scripts\/tabs.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/tabs.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/tabs-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -1695,8 +1522,8 @@
 		},
 	"\/js\/scripts\/toolTip.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/scripts\/toolTip.js",
 		"outputAbbreviatedPath": "\/js\/scripts\/min\/toolTip-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -2023,18 +1850,6 @@
 		"strictImports": 0,
 		"strictMath": 0,
 		"strictUnits": 0
-		},
-	"\/README.md": {
-		"enableFootnoteSupport": 0,
-		"enableSmartyPants": 1,
-		"expandTabs": 1,
-		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/README.md",
-		"outputAbbreviatedPath": "\/README.html",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
@@ -2168,6 +1983,10 @@
 			"flagValue": -1
 			},
 		"non_empty_constructor_needs_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"prefer_english_operator": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -2646,6 +2465,7 @@
 	"stylusAutoOutputPathReplace1": "stylus",
 	"stylusAutoOutputPathReplace2": "css",
 	"stylusAutoOutputPathStyle": 2,
+	"stylusCreateSourceMap": 0,
 	"stylusDebugStyle": 0,
 	"stylusImportCSS": 0,
 	"stylusOutputStyle": 0,

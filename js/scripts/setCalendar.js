@@ -51,7 +51,7 @@
 			dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
 			dayNamesMin: ['D','L','M','M','J','V','S'],
 			weekHeader: 'Sm',
-			dateFormat: 'dd/mm/yy',
+			dateFormat: 'yy-mm-dd',
 			firstDay: 1,
 			isRTL: false,
 			showMonthAfterYear: false,

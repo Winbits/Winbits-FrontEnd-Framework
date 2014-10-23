@@ -34,8 +34,13 @@
 		//  Método para agregar/remover la clase:
 		// obj: Objeto
 		addRemoveClass = function(obj){
-			// Si el alto de la ventana es mayor al mínimo
-			if($(window).height() > defaults.minHeigth) {
+			// Si el alto de la ventana es menor al mínimo
+			// console.log($(document).height() + ' ' + $(window).height() + ' ' + $('body').height());
+			var item = 'html';
+			if($('.msie8, .msie7, .msie6').length){
+				item = 'body';
+			}
+			if($(item).height() < $(window).height()) {
 				// Agregar la clase fixed
 				$(obj).addClass(defaults.clase);
 			//  Entonces si la ventan es menor al mínimo

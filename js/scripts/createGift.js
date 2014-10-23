@@ -14,9 +14,15 @@ jQuery.fn.createGift = function (options) {
 			flowSlide: 'createGift-slide', // Clase del slide del carrusel dentro de Create Giftbook
 			flowWrapper: 'createGift-wrapper', // Clase del wrapper del carrusel dentro de Create Giftbook
 			flowCalculateHeigth: true, // Calcular automáticamente el alto del carrusel dentro de Create Giftbook
-			flowArrowLeft: '.gingleFont-leftArrow', // Flecha izquierda/Prev del carrusel dentro de Create Giftbook
-			flowArrowRight: '.gingleFont-rightArrow', // Flecha derecha/Next del carrusel dentro de Create Giftbook
-			flowRadioDiv: '.option-description' // Div donde se encuentran los radiobutton dentro de Create Giftbook
+			flowArrowLeft: '.arrow.gingleFont-leftArrow', // Flecha izquierda/Prev del carrusel dentro de Create Giftbook
+			flowArrowRight: '.arrow.gingleFont-rightArrow', // Flecha derecha/Next del carrusel dentro de Create Giftbook
+			flowRadioDiv: '.option-description', // Div donde se encuentran los radiobutton dentro de Create Giftbook
+			deliveryDetailsDiv: '.createGift-delivery',
+			deliveryDetailsArrow: '.delivery-details-arrow',
+			deliveryDetailsBack: '.delivery-container .backBtn',
+			flowMin: '.createGift-mainCarrusel',
+			flowMinClass: 'createGift-flowmin',
+			viewCarruselBtn: '.single-personalize'
 		}, options),
 		// Método para abrir Introducción
 		openIntro = function () {
@@ -25,15 +31,20 @@ jQuery.fn.createGift = function (options) {
 				scrollTop: 0
 			}, 500, function(){
 				// Cuando acabe la animación de la página, mostrar Introducción
-				$(defaults.introGift).slideDown();
+				if($(defaults.deliveryDetailsDiv).css('display') === 'none'){
+					$(defaults.introGift).slideDown();
+					$(defaults.flowGift).removeClass(defaults.flowMinClass).slideUp();
+				}
 			});
 		},
 		// Método para abrir Create Giftbook
 		openFlowGift = function () {
+			$(defaults.flowGift).find(defaults.viewCarruselBtn).hide();
 			// Ocultar Introducción
 			$(defaults.introGift).slideUp();
 			// Mostrar Create Giftbook
-			$(defaults.flowGift).slideDown(500, function(){
+			$(defaults.flowMin).slideDown();
+			$(defaults.flowGift).removeClass(defaults.flowMinClass).slideDown(500, function(){
 				// Si la bandera para iniciar carrusel y radibuttons (que por default es 0) esta en la posición default
 				if(!defaults.initObj) {
 					// Inicia el carrusel y los radiobuttons
@@ -55,22 +66,46 @@ jQuery.fn.createGift = function (options) {
 				arrowLeft: defaults.flowArrowLeft, // Flecha izquierda/prev del carrusel
 				arrowRight: defaults.flowArrowRight, // Flecha derecha/next del carrusel
 				slideCSS: '.'+defaults.flowSlide, // Calse del slide del carrusel
-				calculateHeight: defaults.flowCalculateHeigth // Calcular el alto automáticamente del carrusel
+				calculateHeight: defaults.flowCalculateHeigth, // Calcular el alto automáticamente del carrusel
+				lastAction: function(){
+					$(defaults.deliveryDetailsArrow).show();
+				},
+				anulateLastAction: function(){
+					$(defaults.deliveryDetailsArrow).hide();
+				}
 			});
 			// Iniciar los radiobuttons con customRadio.js
 			$(defaults.flowRadioDiv).customRadio();
+			$(defaults.deliveryDetailsArrow).click(onDeliverySlideDown);
+			$(defaults.deliveryDetailsBack).click(onDeliverySlideDown);
+		},
+		onDeliverySlideDown = function(){
+			$(defaults.deliveryDetailsDiv).slideToggle();
+			$(defaults.flowGift).slideToggle();
 		},
 		// Método para cerrar Create Giftbook desde el botón hide
 		closeFlowGift = function () {
 			// Ocultar Create Giftbook
-			$(defaults.flowGift).slideUp();
+			$(defaults.flowGift).removeClass(defaults.flowMinClass).slideUp();
+			$(defaults.introGift).slideUp();
+			$(defaults.deliveryDetailsDiv).slideUp();
 		};
 		// INICIO
 		return this.each(function () {
 			// Al click del botón, abrir el div de Introducción
 			$(this).click(openIntro);
 			// Al click del botón hide dentro de Create Giftbook, ocultar Create Giftbook
-			$(defaults.hideFlowGift).click(closeFlowGift);
+			$(defaults.hideFlowGift).each(function(){
+				if($(this).data('flowmin')){
+					$(this).click(function() {
+						$(defaults.flowMin).slideUp();
+						$(defaults.flowGift).addClass(defaults.flowMinClass).find(defaults.viewCarruselBtn).show(0).css('display', 'inline-block');
+					});
+				} else {
+					$(this).click(closeFlowGift);
+				}
+			});
+			$(defaults.flowGift).find(defaults.viewCarruselBtn).click(openFlowGift);
 			// Al click del botón continuar dentro de Introducción, mostrar Create Giftbook y ocultar Introducción
 			$(defaults.introGift).find(defaults.continueIntroGift).click(openFlowGift);
 		});

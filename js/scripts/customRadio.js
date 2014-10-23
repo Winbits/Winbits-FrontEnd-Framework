@@ -11,7 +11,10 @@
 			classColor: 'radio-color',
 			tooltipClass: 'tool-tip',
 			classSoldout: 'radio-soldout',
-			justClick: false
+			classImg: 'radio-img',
+			justClick: false,
+			onClickRadio: false
+
 		}, options),
 		wrappingInput = function(obj){
 			$(obj).find(defaults.radio).each(function(){
@@ -32,12 +35,21 @@
 				if($this.data('soldout')){
 					soldOut(this);
 				}
+				if($this.data('img')){
+					customImg(this);
+				}
+				if($this.data('class')){
+					addClass(this);
+				}
 				$this.appendTo($this.next());
 			});
 			clickingRadio(obj);
 			$(obj).find('label').click(function(){
 				$(this).parent().find('.' + defaults.spanRadio).trigger('click');
 			});
+		},
+		addClass = function(obj){
+			$(obj).parent().find('.'+defaults.spanRadio).addClass($(obj).data('class')).text('');
 		},
 		unchecRadio = function(obj){
 			$(obj).find(defaults.radio).each(function(){
@@ -55,10 +67,17 @@
 						$(this).addClass(defaults.spanSelected);
 					}
 				}
+				if(defaults.onClickRadio){
+					defaults.onClickRadio(obj);
+				}
 			});
 		},
 		customColor = function(obj){
 			$(obj).parent().find('.'+defaults.spanRadio).addClass(defaults.classColor).css('background-color', '#'+$(obj).data('color'));
+			$(obj).parent().find('.'+defaults.spanRadio).toolTip({clase: defaults.tooltipClass});
+		},
+		customImg = function(obj){
+			$(obj).parent().find('.'+defaults.spanRadio).addClass(defaults.classImg).css('background-image', 'url('+$(obj).data('img')+')');
 			$(obj).parent().find('.'+defaults.spanRadio).toolTip({clase: defaults.tooltipClass});
 		},
 		soldOut = function(obj){

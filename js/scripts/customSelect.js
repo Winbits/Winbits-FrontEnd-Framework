@@ -23,10 +23,10 @@
 			}
 		},
 		addInput = function(obj){
-			if($(obj).data('inputselect')) {
-				selectContent = '<input type="text" class="'+ defaults.inputSelect +'">';
+			if($(obj).data('inputselect') && (!$('.msie8, .msie7, .msie6').length)) {
+				selectContent = '<input type="text" class="'+ defaults.inputSelect +'" size="0">';
 			} else {
-				selectContent = '<span class="'+ defaults.inputSelect +'"/>';
+				selectContent = '<span class="'+ defaults.inputSelect +'" size="0"/>';
 			}
 			$(obj).after(selectContent+'<span class="'+ defaults.claseTrigger +'"/>');
 			addInputSelect(obj);
@@ -53,7 +53,7 @@
 			if($(obj).children('option').eq(0).data('icon')) {
 				classOption = classOption + ' ' + $(obj).children('option').eq(0).data('icon');
 			}
-			if($(obj).data('inputselect')) {
+			if($(obj).data('inputselect') && (!$('.msie8, .msie7, .msie6').length)) {
 				styledSelect.attr('placeholder',$(obj).children('option').eq(0).text());
 				if(inputValue){
 					styledSelect.val(valor);
@@ -83,7 +83,13 @@
 			defaults.onChangeSelect(obj);
 		},
 		clickingTrigger = function(obj){
-			$(obj).parent().on('click', 'span.'+ defaults.claseTrigger, function(e){
+			var clickItem;
+			if($(obj).data('inputselect') && (!$('.msie8, .msie7, .msie6').length)) {
+				clickItem = 'span.'+ defaults.claseTrigger;
+			} else {
+				clickItem = 'span.'+ defaults.claseTrigger +', span.'+defaults.inputSelect;
+			} 
+			$(obj).parent().on('click', clickItem, function(e){
 				if(!$(this).hasClass(defaults.disabledInput)){
 					e.stopPropagation();
 					$('.'+defaults.ulOptions).hide();
@@ -103,7 +109,7 @@
 				e.stopPropagation();
 				styledSelect = $(obj).siblings('.'+ defaults.inputSelect);
 				var $this = $(this);
-				if($(obj).data('inputselect')) {
+				if($(obj).data('inputselect') && (!$('.msie8, .msie7, .msie6').length)) {
 					styledSelect.val($this.text());
 				} else {
 					styledSelect.text($this.text());
@@ -122,6 +128,7 @@
 				}
 				$(obj).siblings('ul').hide();
 				$(obj).trigger('change');
+				onKeyUp(styledSelect);
 			});
 			$(obj).on('change', function(e){
 				e.stopPropagation();
@@ -136,6 +143,16 @@
 		resetSelected = function(obj){
 			$(obj).children('option').each(function(){
 				$(this).removeAttr('selected');
+			});
+		},
+		resizeInput = function(obj){
+			$(obj).attr('size', $(obj).val().length);
+		},
+		onKeyUp = function(obj){
+			$(obj).keyup(function(){
+				resizeInput(this);
+			}).each(function(){
+				resizeInput(this);
 			});
 		},
 		wrappingSelect = function(obj){

@@ -9,7 +9,11 @@
 			unSelectClass: 'checkbox-unchecked',
 			wrapper: 'checkbox-wrapper',
 			spanIcon: 'checkbox-span',
-			onClickCall: false
+			onClickCall: false,
+			classColor: 'checkbox-color',
+			tooltipClass: 'tooltip',
+			checkAll: false,
+			checkAllClass: 'checkbox-checkall'
 		}, options), clase,
 		wrappingInput = function(obj){
 			$(obj).find(defaults.checkbox).each(function(){
@@ -28,6 +32,9 @@
 				$($this).parents('.'+defaults.wrapper).click(function(){
 					clickingCheckbox($this, $($this).parents('.'+defaults.wrapper).children('.' + defaults.spanIcon));
 				});
+				if($($this).data){
+					customColor($($this));
+				}
 			});
 		},
 		checkingChecked = function(obj){
@@ -37,20 +44,37 @@
 				clase = defaults.unSelectClass;
 			}
 		},
+		checkAll = function (obj, value, classAdd, classRemove){
+			if(defaults.checkAll){
+				var $siblings = $(obj).parents('.'+defaults.wrapper).siblings();
+				if($(obj).hasClass(defaults.checkAllClass)) {
+					$siblings.find(defaults.checkbox).prop('checked', value)
+					.parents('.'+defaults.wrapper).find('.'+defaults.spanIcon).removeClass(classRemove).addClass(classAdd);
+				} else {
+					if(value === false && $siblings.find('.'+defaults.checkAllClass).prop('checked')){
+						$siblings.find('.'+defaults.checkAllClass).prop('checked', false)
+						.parents('.'+defaults.wrapper).find('.'+defaults.spanIcon).removeClass(classRemove).addClass(classAdd);
+					}
+				}
+			}
+		},
 		clickingCheckbox = function(obj, trigger){
 			if($(obj).prop('checked')){
 				$(trigger).removeClass(defaults.selectClass).addClass(defaults.unSelectClass);
 				$(obj).prop('checked', false);
+				checkAll(obj, false, defaults.unSelectClass, defaults.selectClass);
 			} else {
 				$(trigger).removeClass(defaults.unSelectClass).addClass(defaults.selectClass);
 				$(obj).prop('checked', true);
+				checkAll(obj, true, defaults.selectClass, defaults.unSelectClass);
 			}
 			if(defaults.onClickCall){
-				onClickCallback(obj, $(obj).parents('.'+defaults.wrapper));
+				defaults.onClickCall(obj);
 			}
 		},
-		onClickCallback = function(obj, parent){
-			defaults.onClickCall(obj, parent);
+		customColor = function(obj){
+			$(obj).siblings('.'+defaults.spanIcon).addClass(defaults.classColor).css('background-color', '#'+$(obj).data('color')).attr('data-tooltip', $(obj).val());
+			$(obj).siblings('.'+defaults.spanIcon).toolTip({clase: defaults.tooltipClass});
 		};
 		return this.each(function(){
 			wrappingInput(this);
