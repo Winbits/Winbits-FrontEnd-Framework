@@ -1,7 +1,7 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //      CUSTOMSLIDER: Deslizar el rango para cambiar valor de bits
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+	
 	jQuery.fn.customSlider = function(options){
 		var defaults = $.extend({
 			wrapper: 'slider-wrapper',

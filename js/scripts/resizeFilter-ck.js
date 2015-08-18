@@ -4,7 +4,7 @@
 
 	jQuery.fn.resizeFilter = function(options){
 		var defaults = $.extend({
-			items: '.checkbox-wrapper, .clickoneroFilter-subContainer',
+			items: '.checkbox-wrapper',
 			contador: 5,
 			filterMoreContainer: 'clickoneroFilter-more',
 			filterIcon: 'clickoneroFilter-icon',
@@ -17,17 +17,21 @@
 			filterHasChild: false
 		}, options), toggleTxt = true,
 		countItems = function(obj){
-			var $lengthItems = $(obj).children(defaults.items);
+			var $lengthItems = $(obj).find(defaults.items);
 			if($lengthItems.length > defaults.contador) {
 				if(!$(obj).find('.'+  defaults.filterMoreContainer).length) {
-					$(obj).append('<div class="' + defaults.filterMoreContainer + '"><span class="'+ defaults.filterClass + '">' + defaults.filterMoreText + '</span><span class="' + defaults.filterIcon + ' ' +defaults.filterMoreIcon + '"></span></div>');
+					if(defaults.filterHasChild) {
+						$(obj).find(defaults.filterHasChild).append('<div class="' + defaults.filterMoreContainer + '"><span class="'+ defaults.filterClass + '">' + defaults.filterMoreText + '</span><span class="' + defaults.filterIcon + ' ' +defaults.filterMoreIcon + '"></span></div>');
+					} else {
+						$(obj).append('<div class="' + defaults.filterMoreContainer + '"><span class="'+ defaults.filterClass + '">' + defaults.filterMoreText + '</span><span class="' + defaults.filterIcon + ' ' +defaults.filterMoreIcon + '"></span></div>');
+					}
 				}
 				addClass(obj);
 				clickFilterMore(obj);
 			}
 		},
 		addClass = function(obj){
-			$(obj).children(defaults.items).each(function(i){
+			$(obj).find(defaults.items).each(function(i){
 				if(i >= defaults.contador){
 					$(this).slideToggle(100, function(){
 						$(this).toggleClass(defaults.filterHide);
@@ -58,11 +62,7 @@
 			}
 		};
 		return this.each(function(){
-			if(defaults.filterHasChild) {
-				countItems($(this).find(defaults.filterHasChild));
-			} else {
-				countItems(this);
-			}
+			countItems(this);
 		});
 	};
 

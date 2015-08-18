@@ -1,7 +1,7 @@
 // +++++++++++++++++++++++++++++++++++++++++++
 //      CUSTOMSELECT: Customizar el select
 // +++++++++++++++++++++++++++++++++++++++++++
-	
+
 	jQuery.fn.customSelect = function(options){
 		var defaults = $.extend({
 			selectHidden: 'select-hidden',
@@ -157,10 +157,13 @@
 		},
 		wrappingSelect = function(obj){
 			numberOfOptions = $(obj).children('option').length;
-			$(obj).addClass(defaults.selectHidden);
-			$(obj).wrap('<div class="'+ defaults.divSelect +'"/>');
-			addClass(obj);
-			addInput(obj);
+			if(!$(obj).parents('.'+defaults.divSelect).length){
+				$(obj).addClass(defaults.selectHidden);
+				$(obj).wrap('<div class="'+ defaults.divSelect +'"/>');
+				addClass(obj);
+				addInput(obj);
+			}
+			
 		};
 		return this.each(function(){
 			wrappingSelect(this);

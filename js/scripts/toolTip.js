@@ -4,12 +4,18 @@
 	
 	jQuery.fn.toolTip = function(options){
 		var defaults = $.extend({
-			clase: 'tooltip'
+			clase: 'tooltip',
+			tipHTML: true
 		}, options),
 		asignaValor = function(obj){
 			var $this = $(obj), valor;
-			if ($this.text() !== '') {
-				valor = $this.text();
+			if ($this.is(':parent')) {
+				if(defaults.tipHTML) {
+					valor = $this.html();
+				} else {
+					valor = $this.text();
+				}
+				
 			} else if($this.val()){
 				valor = $this.val();
 			} else if ($this.data('tooltip')){

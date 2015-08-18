@@ -1,8 +1,8 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //      MAILINGMENUCHECKBOXS: Eventos / efectos para los checkboxes y radios del menú
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	function checkOverlay (){
-		var defaults = {
+	function checkOverlay (options){
+		var defaults = $.extend({
 			parents: '.column-checkboxs',
 			siblings: '.column-radios',
 			checkboxSpan: '.checkbox-span',
@@ -12,7 +12,7 @@
 			radioSpan: '.radio-span',
 			radioSelected: 'radio-selected',
 			grandparent: '#wb-micuenta-mailing'
-		},
+		}, options),
 		checkCheckbox = function(){
 			if($(defaults.parents).find(defaults.checkboxSpan).hasClass(defaults.checkboxChecked)){
 				$(defaults.grandparent).find(defaults.overlay).slideUp();

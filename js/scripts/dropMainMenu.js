@@ -14,7 +14,12 @@
 			if (!$(obj).is(defaults.claseActivo) && defaults.beforeOpen() === false) {
 				return;
 			}
-			$(obj).siblings(defaults.contenedor).stop(true, true).slideToggle();
+			$(obj).siblings(defaults.contenedor).stop(true, true).slideToggle($.noop, 
+				function(){
+            		if($('#wbi-cart-no-data').is(':visible')){
+              			window.setTimeout(function(){$('#wbi-cart-info').trigger('click');}, 3000);
+            		}
+          		});
 			$(obj).toggleClass(defaults.claseActivo);
 		},
 		closeSiblings = function(obj){

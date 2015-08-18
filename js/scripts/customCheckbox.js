@@ -10,6 +10,7 @@
 			wrapper: 'checkbox-wrapper',
 			spanIcon: 'checkbox-span',
 			onClickCall: false,
+			onFinishWrapping: false,
 			classColor: 'checkbox-color',
 			tooltipClass: 'tooltip',
 			checkAll: false,
@@ -19,21 +20,26 @@
 			$(obj).find(defaults.checkbox).each(function(){
 				var $this = this;
 				checkingChecked($this);
-				if($($this).next().is('label')){
-					$($this).next().andSelf().wrapAll('<div class="'+ defaults.wrapper +'"/>');
-					$($this).next().click(function(e){
-						e.preventDefault();
-					});
-					$($this).appendTo($(this).next());
-				} else {
-					$($this).wrap('<div class="' + defaults.wrapper + '"/>');
+				if(!$($this).parents('.' + defaults.wrapper).length) {
+					if($($this).next().is('label')){
+						$($this).next().andSelf().wrapAll('<div class="'+ defaults.wrapper +'"/>');
+						$($this).next().click(function(e){
+							e.preventDefault();
+						});
+						$($this).appendTo($(this).next());
+					} else {
+						$($this).wrap('<div class="' + defaults.wrapper + '"/>');
+					}
+					$($this).parents('.'+defaults.wrapper).prepend('<span class="'+ defaults.spanIcon +' '+ clase +'"/>');
 				}
-				$($this).parents('.'+defaults.wrapper).prepend('<span class="'+ defaults.spanIcon +' '+ clase +'"/>');
 				$($this).parents('.'+defaults.wrapper).click(function(){
 					clickingCheckbox($this, $($this).parents('.'+defaults.wrapper).children('.' + defaults.spanIcon));
 				});
-				if($($this).data){
+				if($($this).data('color')){
 					customColor($($this));
+				}
+				if(defaults.onFinishWrapping){
+					defaults.onFinishWrapping($this);
 				}
 			});
 		},

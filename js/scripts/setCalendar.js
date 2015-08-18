@@ -36,7 +36,8 @@
 					
 				}
 			}
-			return [regreso, classe];
+			// return [regreso, classe]; // estos días no se pueden seleccionar
+			return [true, classe];
 		};
 		$.datepicker.regional['es'] = {
 			closeText: 'Cerrar',

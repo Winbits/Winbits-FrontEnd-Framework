@@ -1,7 +1,25 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //      CUSTOMSLIDER: Deslizar el rango para cambiar valor de bits
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+var putCommas = function (numero) {
+        var nums = [],
+            res = "",
+            value = numero.toString(),
+            simb = ',';
+        value = value.replace(/\D/g, ""); // Expresión regular que permite ingresar sólo números
+        nums = value.split("");
+        var long = nums.length - 1,
+            patron = 3, // Cada cuando se pone la coma
+            prox = 2; // En qué lugar se inserta la siguiente coma
+        while (long > prox) {
+            nums.splice((long - prox), 0, simb); // Se agrega la coma
+            prox += patron;
+        }
+        for (var i = 0; i <= nums.length - 1; i++) {
+            res += nums[i];
+        }
+        return res;
+    };
 	jQuery.fn.customSlider = function(options){
 		var defaults = $.extend({
 			wrapper: 'slider-wrapper',

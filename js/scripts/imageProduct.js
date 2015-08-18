@@ -9,6 +9,7 @@
 			imgs: '.imageProduct-slide',
 			activeSlide: false,
 			zoom: true,
+			evento: 'click',
 			clickClass: 'imageProduct-current'
 		}, options), bigImage, firstChild, imagenes, imagenGrande,
 		asignaValues = function(obj){
@@ -42,7 +43,7 @@
 				} else {
 					imgBg = $(this).attr('src');
 				}
-				$(this).click(function(){
+				$(this).on(defaults.evento , function(){
 					$(this).parent().addClass(defaults.clickClass).siblings().removeClass(defaults.clickClass);
 					if(defaults.zoom){
 						bigImage.trigger('zoom.destroy');

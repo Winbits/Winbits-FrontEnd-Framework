@@ -17,83 +17,87 @@
 			.
 			<div class="carrusel-slide"> ... </div> // Slide n
 		</div>
-		<span class="arrowLeft">Anterior</span> // Flecha izquierda para mover hacia atrás. Opcional
-		<span class="arrowRight">Siguiente</span> // Flecha derecha para mover hacia adelante. Opcional
+		<span class="arrowleft">Anterior</span> // Flecha izquierda para mover hacia atrás. Opcional
+		<span class="arrowright">Siguiente</span> // Flecha derecha para mover hacia adelante. Opcional
 	</div>
 	Llamada básica:
 	$('.carrusel').carouselSwiper();
 	
 	Opciones:
 	arrow: Si el carrusel lleva flechas se activa con 'true'. Por default estan desactivadas con 'false'
-	arrowLeft: Clase de la flecha izquierda/anterior/prev. Tiene que estar activada la opción arrow.
-	arrowRight: Clase de la flecha derecha/siguiente/next. Tiene que estar activada la opción arrow.
-	slidesNum: Número de slides que muestra en pantalla. El default es 0 y muestra solo un slide en cada movimiento
-	slideCSS: Clase del slide
+	arrowleft: Clase de la flecha izquierda/anterior/prev. Tiene que estar activada la opción arrow.
+	arrowright: Clase de la flecha derecha/siguiente/next. Tiene que estar activada la opción arrow.
+	slidesnum: Número de slides que muestra en pantalla. El default es 0 y muestra solo un slide en cada movimiento
+	slidecss: Clase del slide
 	loop: Si se necesita repetir el carrusel en un ciclo infinito o circular. Por default esta desactivado con 'false'. Para activar 'true'
-	optionsSwiper: Opciones del API SWIPER
-	calculateHeight: Calcular el alto del carrusel. Por default está en 'false' ytomará el alto definido. Para activar 'true'
-	onClickSlide: Función externa que se ejecutará cuando le das click a un slide. Por default no hace nada
-	initialSlide: Si el slide inicial es diferente a la primera. Aqui se pone el número del slide donde se iniciará. NOTA: Tomar en cuenta que en carruseles cíclicos, se duplica el primer y el último slide.
-	carruselNum: Para asignar un número al carrusel. Útil cuando son más de uno.
-	externalSwipeTo: Si necesitar usar un objeto externo para hacer swipe en un slide específico
-	externalSwipeToItem: Objeto externo para hacer el swipe en un slide especifico. Requiere data-swipeto con el número del index
-	externalSwipeScrollTo: Objeto a donde se quiere hacer scroll una vez que se haga click en el objeto externo y se mueva el carrusel. Por default ninguno
+	optionsswiper: Opciones del API SWIPER
+	calculateheight: Calcular el alto del carrusel. Por default está en 'false' ytomará el alto definido. Para activar 'true'
+	onclickslide: Función externa que se ejecutará cuando le das click a un slide. Por default no hace nada
+	initialslide: Si el slide inicial es diferente a la primera. Aqui se pone el número del slide donde se iniciará. NOTA: Tomar en cuenta que en carruseles cíclicos, se duplica el primer y el último slide.
+	carruselprefix: Para asignar un número al carrusel. Útil cuando son más de uno.
+	externalswipeto: Si necesitar usar un objeto externo para hacer swipe en un slide específico
+	externalswipetoitem: Objeto externo para hacer el swipe en un slide especifico. Requiere data-swipeto con el número del index
+	externalswipescrollto: Objeto a donde se quiere hacer scroll una vez que se haga click en el objeto externo y se mueva el carrusel. Por default ninguno
 */
 	
-	jQuery.fn.carouselSwiper = function(options){
+	jQuery.fn.WBSwiper = function(options){
 		var defaults = $.extend({
 			arrow: true,
-			arrowLeft: '.arrowLeft',
-			arrowRight: '.arrowRight',
-			centerArrow: true,
-			slideActive: 'swiper-slide-active',
-			slideVisible: '.swiper-slide-visible',
-			slidesNum: 1,
-			slidesPrefix: 'slide',
-			slideCSS: '.carrusel-slide',
+			arrowleft: '.arrowleft',
+			arrowright: '.arrowright',
+			centerarrow: true,
+			slideactive: 'swiper-slide-active',
+			slidevisible: '.swiper-slide-visible',
+			slidesnum: 1,
+			slidesprefix: 'slide',
+			slidecss: '.carrusel-slide',
 			loop: false,
-			optionsSwiper: {
+			optionsswiper: {
 				grabCursor: true,
 				useCSS3Transforms: false
 			},
-			calculateHeight: false,
-			onClickSlide: false,
-			initialSlide: false,
-			carruselNum: 'swiperCarrusel-',
-			externalSwipeTo: false,
-			externalSwipeToItem: '.swipeToObj',
-			externalSwipeScrollTo: false,
-			lastAction: false,
-			anulateLastAction: false,
-			numSlideCarousel: 'carrusel-slides-'
+			calculateheight: false,
+			onclickslide: false,
+			initialslide: false,
+			carruselprefix: 'swiperCarrusel-',
+			externalswipeto: false,
+			externalswipetoitem: '.swipeToObj',
+			externalswipescrollto: false,
+			lastaction: false,
+			anulatelastaction: false,
+			slideprefixnum: 'carrusel-slides-'
 		}, options),
 		size = 0, // Variable que servirá para escribir el número de slides que tiene el carrusel
+		// 0. Verificar si existen data en el objeto para modificar los defaults
+		checkData = function(obj){
+			$.extend(defaults, $(obj).data());
+		};
 		// 1. Método que calcula cuántos slides tiene el carrusel:
 		// obj: El objeto carrusel
 		calculateSize = function(obj){
 			// Asignar a la variable global size el número de slides, contándolos
-			size = parseInt($(obj).find(defaults.slideCSS).size(), 10);
+			size = parseInt($(obj).find(defaults.slidecss).size(), 10);
 			// Si el slide inicial no es el primero
-			if(defaults.initialSlide){
+			if(defaults.initialslide){
 				// A cada uno de los slides se le agrega un índice
-				$(obj).find(defaults.slideCSS).each(function(i){
-					$(this).addClass(defaults.slidesPrefix+i);
+				$(obj).find(defaults.slidecss).each(function(i){
+					$(this).addClass(defaults.slidesprefix+i);
 				});
 			}
 			// Si queremos mostrar más de un slide en cada vista
-			if(defaults.slidesNum > 1){
+			if(defaults.slidesnum > 1){
 				// Si la cantidad de slides es mayor al número de slides que se quiere mostrar en cada vista
-				if(size > defaults.slidesNum){
+				if(size > defaults.slidesnum){
 					// Llamar método que inicializa el carrusel
 					initSwiper(obj);
 				// Si el número de slides es menor al número de slides por vista
 				} else {
 					// Agregar clase con el número de slides
-					$(obj).addClass(defaults.numSlideCarousel+size);
-					$(obj).find(defaults.slideCSS).first().addClass(defaults.slideActive);
+					$(obj).addClass(defaults.slideprefixnum+size);
+					$(obj).find(defaults.slidecss).first().addClass(defaults.slideactive);
 					// Oculta las flechas derecha e izquierda
-					$(obj).siblings(defaults.arrowLeft).hide();
-					$(obj).siblings(defaults.arrowRight).hide();
+					$(obj).siblings(defaults.arrowleft).hide();
+					$(obj).siblings(defaults.arrowright).hide();
 				}
 			// Si el número de slides a mostrar por vista es el default ( o sea 1)
 			} else {
@@ -104,8 +108,8 @@
 				// Si la cantidad de slides es 1 o 0
 				} else {
 					// Oculta las flechas izquierda y derecha
-					$(obj).siblings(defaults.arrowLeft).hide();
-					$(obj).siblings(defaults.arrowRight).hide();
+					$(obj).siblings(defaults.arrowleft).hide();
+					$(obj).siblings(defaults.arrowright).hide();
 					// Oculta objeto si no hay slides
 					if(size === 0){
 						$(obj).hide();
@@ -117,7 +121,7 @@
 		// obj: El objeto carrusel
 		initSwiper = function(obj){
 			// Objeto que contendrá el carrusel
-			var swiper = new Swiper (obj, defaults.optionsSwiper);
+			var swiper = new Swiper (obj, defaults.optionsswiper);
 			// Si no se necesita repetir el carrusel
 			if(!(defaults.loop)){
 				// Agrega al objeto del carrusel el callback Touch End
@@ -144,7 +148,7 @@
 				});
 			}
 			// Si el slide inicial es diferente al primero
-			if(defaults.initialSlide){
+			if(defaults.initialslide){
 				// Cambia la posición del carrusel
 				initialSlide(obj, swiper);
 			}
@@ -154,19 +158,19 @@
 				initArrow(obj, swiper);
 			}
 			// Si se tiene que calcular el alto del carrusel
-			if(defaults.calculateHeight){
+			if(defaults.calculateheight){
 				// Calcula el alto del carrusel
 				calculateHeight(obj, swiper);
 				// Agrega al objeto carrusel onSlideChangeStart(que es del swiper) que recalcule el alto cada vez que se cambie un slide
 				swiper.params.onSlideChangeStart = function(swiper){calculateHeight(obj, swiper);};
 			}
 			// Si se necesita agragar funcionalidad después de que le den click al slide
-			if(defaults.onClickSlide){
-				$(obj).find(defaults.slideCSS).on('click', function(e){
+			if(defaults.onclickslide){
+				$(obj).find(defaults.slidecss).on('click', function(e){
 					// Deten la propagación de eventos
 					e.stopPropagation();
-					// Ejecuta la función que venga en onClickSlide al carrusel
-					defaults.onClickSlide(swiper);
+					// Ejecuta la función que venga en onclickslide al carrusel
+					defaults.onclickslide(swiper);
 				});
 			}
 			// Agregar al carrusel que los callbacks se ejecuten sólo una vez en múltiples al inicio de los cambios de slide (como cuando un usuario le pica repetidamente a las flechas)
@@ -180,9 +184,9 @@
 					prepareArrow(obj, swiper);
 				}
 			};
-			if(defaults.externalSwipeTo){
+			if(defaults.externalswipeto){
 				// Atachamos al evento click la función
-				$(defaults.externalSwipeToItem).on('click', function(){
+				$(defaults.externalswipetoitem).on('click', function(){
 					// Llamamos la función externalSwiper que moverá el carrusel con el data-swipeto del objeto
 					externalSwipe(swiper, obj, $(this));
 				});
@@ -195,9 +199,9 @@
 			// Variable donde se deposita el slide inicial
 			var index = 0;
 			// Recorre todos los slides
-			$(obj).find(defaults.slideCSS).each(function(i){
+			$(obj).find(defaults.slidecss).each(function(i){
 				// Si encuentras en el slide la clase del slide inicial
-				if(($(this).find(defaults.initialSlide).length) || ($(this).hasClass(defaults.initialSlide))){
+				if(($(this).find(defaults.initialslide).length) || ($(this).hasClass(defaults.initialslide))){
 					// Agregale el valor del índice a la variable index
 					index = i;
 				}
@@ -220,7 +224,7 @@
 				prepareArrow(obj, swiper);
 			}
 			// Busca en los hermanos del objeto la flecha izquierda/anterior/prev y en el click
-			$(obj).siblings(defaults.arrowLeft).on('click', function(e) {
+			$(obj).siblings(defaults.arrowleft).on('click', function(e) {
 				// Deten la propagación de eventos
 				e.stopPropagation();
 				// Si no se tiene que repetir el carrusel
@@ -232,7 +236,7 @@
 				swiper.swipePrev();
 			});
 			// Busca en los hermanos del objeto la flecha derecha/siguiente/next y en el click
-			$(obj).siblings(defaults.arrowRight).on('click', function(e) {
+			$(obj).siblings(defaults.arrowright).on('click', function(e) {
 				// Deten la propagación de eventos
 				e.stopPropagation();
 				// Si no se tiene que repetir el carrusel
@@ -250,8 +254,8 @@
 		calculateHeight = function(obj, swiper){
 			// Variable que escribe la altura del slide activo
 			var altura = 0;
-			if(defaults.slidesNum > 1) {
-				$(obj).find(defaults.slideVisible).each(function(){
+			if(defaults.slidesnum > 1) {
+				$(obj).find(defaults.slidevisible).each(function(){
 					if (altura < $(this).outerHeight()){
 						altura = $(this).outerHeight();
 					}
@@ -264,8 +268,8 @@
 				height: altura+'px'
 			});
 			// Busca en los hermanos del carrusel la flecha izquierda y derecha y cambia el valor top para que se pongan en el centro del carrusel
-			if(defaults.centerArrow){
-				$(obj).siblings(defaults.arrowRight+', '+defaults.arrowLeft).css('top', altura / 2 +'px');
+			if(defaults.centerarrow){
+				$(obj).siblings(defaults.arrowright+', '+defaults.arrowleft).css('top', altura / 2 +'px');
 			}
 		},
 		// Método que verifica posición de las flechas (si se deben mostrar o no):
@@ -273,13 +277,13 @@
 		prepareArrow = function(obj, swiper){
 			// Llama a removeArrow
 			$(obj).removeArrows({
-				arrowLeft: defaults.arrowLeft, // Flecha izquierda/anterior/prev
-				arrowRight: defaults.arrowRight, // Flecha derecha/siguiente/next
-				slidesNum: defaults.slidesNum, // Número de slides por vista
-				slideCSS: defaults.slideCSS, // Clase del slide del carrusel
+				arrowleft: defaults.arrowleft, // Flecha izquierda/anterior/prev
+				arrowright: defaults.arrowright, // Flecha derecha/siguiente/next
+				slidesnum: defaults.slidesnum, // Número de slides por vista
+				slidecss: defaults.slidecss, // Clase del slide del carrusel
 				swiper: swiper,
-				lastAction: defaults.lastAction,
-				anulateLastAction: defaults.anulateLastAction
+				lastaction: defaults.lastaction,
+				anulatelastaction: defaults.anulatelastaction
 			});
 		},
 		// 6. Método que mueve el carrusel de forma exterior desde un índice dado:
@@ -292,11 +296,11 @@
 			// Movemos el carrusel al índice requerido por el objeto
 			swiper.swipeTo(index, 1000);
 			// Si se especificó un objeto a donde se hará scroll una vez actualizado el carrusel:
-			if (defaults.externalSwipeScrollTo) {
+			if (defaults.externalswipescrollto) {
 				// De forma animada, mover el documento hacia el objeto
 				$('html, body').animate({
 					// El scroll se hace hasta alcanzar el borde superior del objeto
-					scrollTop: $(defaults.externalSwipeScrollTo).offset().top
+					scrollTop: $(defaults.externalswipescrollto).offset().top
 				}, 1000, 'swing');
 			}
 		};
@@ -304,9 +308,11 @@
 		// index: El índice del ciclo para ponerlo como clase
 		return this.each(function(index){
 			// Clase única para identificar el carrusel. Útil cuando son más de uno
-			var obj = defaults.carruselNum+index;
+			var obj = defaults.carruselprefix+index;
 			// Agregar la clase única al carrusel
 			$(this).addClass(obj);
+			// Cambia los valores por default desde los data
+			checkData(this);
 			// Llamar al método que calcula cuántos slides tiene el carrusel
 			calculateSize(this);
 		});
@@ -321,50 +327,50 @@
 	
 	HTML:
 	
-	<span class="arrowLeft">Anterior</span> // Flecha izquierda para mover hacia atrás. Opcional
-	<span class="arrowRight">Siguiente</span> // Flecha derecha para mover hacia adelante. Opcional
+	<span class="arrowleft">Anterior</span> // Flecha izquierda para mover hacia atrás. Opcional
+	<span class="arrowright">Siguiente</span> // Flecha derecha para mover hacia adelante. Opcional
 	Llamada básica:
 	Desde el API carouselSwiper
 	
 	Opciones:
-	slideCSS: Clase de slides
-	slidesNum: Número de slides a mostrar en cada vista. Default es 0
-	arrowLeft: Flecha izquierda/anterior/prev
-	arrowRight: Flecha derecha/siguiente/next
-	slideActive: Clase de slide activa
+	slidecss: Clase de slides
+	slidesnum: Número de slides a mostrar en cada vista. Default es 0
+	arrowleft: Flecha izquierda/anterior/prev
+	arrowright: Flecha derecha/siguiente/next
+	slideactive: Clase de slide activa
 	addCallback: Función para el Callback para después del click. Default: ninguno
 */
 	jQuery.fn.removeArrows = function(options){
 		var defaults = $.extend({
-			slideCSS: '.carrusel-slide',
-			slidesNum: 0,
-			arrowLeft: '.arrowLeft',
-			arrowRight: '.arrowRight',
-			slideActive: 'swiper-slide-active',
+			slidecss: '.carrusel-slide',
+			slidesnum: 0,
+			arrowleft: '.arrowleft',
+			arrowright: '.arrowright',
+			slideactive: 'swiper-slide-active',
 			addCallback: 0,
 			swiper: 'swiper',
-			lastAction: false,
-			anulateLastAction: false
+			lastaction: false,
+			anulatelastaction: false
 		}, options);
 		// INICIO
 		return this.each(function(){
 			// Contamos la cantidad de slides del carrusel
-			var size = $(this).find(defaults.slideCSS).size(),
+			var size = $(this).find(defaults.slidecss).size(),
 			// Flecha izquierda
-				left = $(this).siblings(defaults.arrowLeft),
+				left = $(this).siblings(defaults.arrowleft),
 			// Flecha derecha
-				right = $(this).siblings(defaults.arrowRight),
+				right = $(this).siblings(defaults.arrowright),
 			// Penúltima slide
 				pointOfNoReturn = size - 1;
 			// Si tiene número de slides por vista
-			if (defaults.slidesNum){
+			if (defaults.slidesnum){
 				// Asignale el penúltimo slide
-				pointOfNoReturn = size - defaults.slidesNum;
+				pointOfNoReturn = size - defaults.slidesnum;
 			}
 			// Si la cantidad de slides es mayor al número de slides a mostrar por vista
-			if(size > defaults.slidesNum){
+			if(size > defaults.slidesnum){
 				// Busca en cada uno de los slides
-				$(this).find(defaults.slideCSS).each(function(i){
+				$(this).find(defaults.slidecss).each(function(i){
 					if(!$(this).hasClass('slide'+i)){
 						$(this).addClass('slide'+i);
 					}
@@ -374,24 +380,24 @@
 						}
 					}
 				});
-				$(this).find('.'+defaults.slideActive).each(function(){
+				$(this).find('.'+defaults.slideactive).each(function(){
 					if($(this).hasClass('pointOfNoReturn')){
 						left.show();
 						right.hide();
-						if(defaults.lastAction){
-							defaults.lastAction();
+						if(defaults.lastaction){
+							defaults.lastaction();
 						}
 					} else if($(this).hasClass('slide0')){
 						left.hide();
 						right.show();
-						if(defaults.anulateLastAction){
-							defaults.anulateLastAction();
+						if(defaults.anulatelastaction){
+							defaults.anulatelastaction();
 						}
 					} else {
 						left.show();
 						right.show();
-						if(defaults.anulateLastAction){
-							defaults.anulateLastAction();
+						if(defaults.anulatelastaction){
+							defaults.anulatelastaction();
 						}
 					}
 				});

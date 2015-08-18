@@ -1,31 +1,24 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //      CUSTOMSLIDER: Deslizar el rango para cambiar valor de bits
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
 	var putCommas = function (numero) {
-        var nums = [],
-            res = "",
-            value = numero.toString(),
-            simb = ',';
-        value = value.replace(/\D/g, ""); // Expresión regular que permite ingresar sólo números
-        nums = value.split("");
-        var long = nums.length - 1,
-            patron = 3, // Cada cuando se pone la coma
-            prox = 2; // En qué lugar se inserta la siguiente coma
-        while (long > prox) {
-            nums.splice((long - prox), 0, simb); // Se agrega la coma
-            prox += patron;
-        }
-        for (var i = 0; i <= nums.length - 1; i++) {
-            res += nums[i];
+        var res;
+        if(numero%1){
+        	var parts = numero.toString().split('.');
+        	res = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + '.' + parts[1];
+        } else {
+        	res = numero.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
         }
         return res;
     };
+    
 	jQuery.fn.customSlider = function (options) {
 	    var defaults = $.extend({
 	        wrapper: 'slider-wrapper',
 	        holder: 'slider-holder',
 	        handle: 'ui-slider-handle',
-	        bit: 'iconBit bit13px',
+	        bit: 'iconBit bit18px',
 	        amount: 'slider-amount',
 	        textValue: 'slider-textValue',
 	        textMin: 'slider-minValue',
@@ -39,9 +32,11 @@
 	        if($(obj).data(defaults.maxselection)){
 	        	maxSelection = parseInt($(obj).data(defaults.maxSelection));
 	        }
-	        $(obj).wrap('<div class="' + defaults.wrapper + '"><div class="' + defaults.holder + '"/>');
-	        $(obj).parent().append('<div class="' + defaults.sliderBG + '"></div><a href="#" class="' + defaults.handle + '"><div class="' + defaults.bit + '"><span class="iconBG"/><span class="iconFont-bit"/></div><span class="' + defaults.amount + '">$<em>' + $(obj).val() + '</em></span></a>');
-	        $(obj).parent().parent().append('<span class="' + defaults.textValue + ' ' + defaults.textMin + '">' + $(obj).data('min') + '</span><span class="' + defaults.textValue + ' ' + defaults.textMax + '">' + putCommas(datamax) + '</span>');
+	        if(!$(obj).parents('.'+defaults.wrapper).length){
+	        	$(obj).wrap('<div class="' + defaults.wrapper + '"><div class="' + defaults.holder + '"/>');
+	        	$(obj).parent().append('<div class="' + defaults.sliderBG + '"></div><a href="#" class="' + defaults.handle + '"><div class="' + defaults.bit + '"><span class="iconBG"/><span class="iconFont-bit"/></div><span class="' + defaults.amount + '">$<em>' + $(obj).val() + '</em></span></a>');
+	        	$(obj).parent().parent().append('<span class="' + defaults.textValue + ' ' + defaults.textMin + '">' + $(obj).data('min') + '</span><span class="' + defaults.textValue + ' ' + defaults.textMax + '">' + putCommas(datamax) + '</span>');
+	        }
 	        initSlider(obj);
 	    },
 	    asignaValues = function (obj) {
